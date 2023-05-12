@@ -1,27 +1,28 @@
-import { getSpecificPost, postComment, getCommentSection } from './api.js';
+import { getSpecificPost, postComment, getCommentSection } from "./api.js";
 
 const container = document.querySelector(".blog");
-const title = document.querySelector(".title")
+const title = document.querySelector(".title");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 async function displaySpecificPost() {
   const post = await getSpecificPost(id);
-  title.innerHTML = `Meta Corner | ${post.title.rendered}`
+  title.innerHTML = `Meta Corner | ${post.title.rendered}`;
   container.innerHTML = `<div>${post.content.rendered}</div>`;
-  displayComments(id); 
+  displayComments(id);
 }
 
 async function displayComments(postId) {
   const comments = await getCommentSection(postId);
   const commentsContainer = document.querySelector(".comments");
-  commentsContainer.innerHTML = ""; 
-  comments.forEach(comment => {
-    commentsContainer.innerHTML += `<div class="comment">
-      <h3>${comment.author_name}</h3>
-      <p>${comment.content.rendered}</p>
-    </div>`;
+  commentsContainer.innerHTML = "";
+  comments.forEach((comment) => {
+    commentsContainer.innerHTML += `
+      <div class="comment">
+        <h3>${comment.author_name}</h3>
+        <p>${comment.content.rendered}</p>
+      </div>`;
   });
 }
 
@@ -49,11 +50,9 @@ commentForm.addEventListener("submit", async (event) => {
     document.getElementById("comment-author").value = "";
     document.getElementById("comment-email").value = "";
     document.getElementById("comment-content").value = "";
-    displayComments(id); 
+    displayComments(id);
   } catch (error) {
     console.error("Error:", error);
     alert("There was an error submitting your comment. Please try again.");
   }
 });
-
-

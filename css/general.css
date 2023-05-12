@@ -27,3 +27,10 @@ h1, h3{
     margin: auto;
     width: 350px;
 }
+.full-logo{
+    width: 40%;
+    display: block;
+    margin: auto;  
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
