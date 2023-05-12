@@ -1,0 +1,26 @@
+.contactform{
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+}
+input{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.form-button{
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error{
+    display: none;
+    color: #ff0000;
+    margin-bottom: 10px;
+}

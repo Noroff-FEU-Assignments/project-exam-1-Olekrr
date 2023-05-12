@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Document</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="blogpage">
+    <header>
+      <nav>
+        <div class="nav">
+          <input class="checkbox" type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul class="menu">
+            <img class="logo" src="/assets/images/logo1.png"> 
+            <li><a class="navigation" href="index.html">Home</a></li>
+            <li><a class="navigation" href="bloglist.html">Blogs</a></li>
+            <li><a class="navigation" href="contact.html">Contact</a></li>
+            <li><a class="navigation" href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="blog"></div>
+      <div class="comment-form">
+        <h3>Leave a comment:</h3>
+        <form id="submit-comment-form">
+          <div>
+            <label for="comment-author">Name:</label>
+            <input type="text" id="comment-author" required>
+          </div>
+          <div>
+            <label for="comment-email">Email:</label>
+            <input type="email" id="comment-email" required>
+          </div>
+          <div>
+            <label for="comment-content">Comment:</label>
+            <textarea id="comment-content" rows="5" required></textarea>
+          </div>
+          <button type="submit">Submit comment</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <script type="module" src="/js/blogspecific.js"></script>
+    </footer>
+</body>
+</html>

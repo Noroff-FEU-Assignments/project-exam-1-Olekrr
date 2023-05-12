@@ -1,0 +1,24 @@
+.content-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+  
+  .post-item {
+    
+    text-decoration: none;
+    color: inherit; 
+    overflow: hidden; 
+  }
+  
+  .post-item img {
+    width: 100%;
+    height: auto;
+  }
+  .view-more-button {
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin: 20px auto;
+    cursor: pointer;
+  }

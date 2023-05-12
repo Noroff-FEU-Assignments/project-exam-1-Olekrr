@@ -1,0 +1,29 @@
+@font-face {
+    font-family: Journeyman;
+    src: url(../assets/fonts/journeyman-line.otf);
+  }
+*{
+    margin: 0;
+    padding: 0;
+}
+/*body{
+    background-image: url(/assets/images/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}*/
+header{
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+a{
+    text-decoration: none;
+}
+h1, h3{
+    font-family: Journeyman;
+}
+.logo{
+    display: block;
+    margin: auto;
+    width: 350px;
+}
