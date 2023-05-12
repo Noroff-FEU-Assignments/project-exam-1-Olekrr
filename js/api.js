@@ -13,12 +13,13 @@ async function getSpecificPost(id) {
 }
 
 async function postComment(commentData) {
-  const response = await fetch("https://gamehub.olekristianfrontend.no/wp-json/wp/v2/comments?_embed&per_page=100", {
+  const response = await fetch("https://gamehub.olekristianfrontend.no/wp-json/wp/v2/comments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(commentData),
+    credentials: "include", 
   });
 
   if (!response.ok) {
