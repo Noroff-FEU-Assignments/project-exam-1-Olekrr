@@ -1,19 +1,19 @@
-const baseUrl = "https://gamehub.olekristianfrontend.no/wp-json/wp/v2/posts";
+const baseUrl = "https://gamehub.olekristianfrontend.no/wp-json/wp/v2";
 
 async function getPosts(urlParameters = "") {
-  const response = await fetch(`${baseUrl}?_embed&per_page=100${urlParameters}`);
+  const response = await fetch(`${baseUrl}/posts?_embed&per_page=100${urlParameters}`);
   const results = await response.json();
   return results;
 }
 
 async function getSpecificPost(id) {
-  const response = await fetch(`${baseUrl}/${id}?_embed`);
+  const response = await fetch(`${baseUrl}/posts/${id}?_embed`);
   const data = await response.json();
   return data;
 }
 
 async function postComment(commentData) {
-  const response = await fetch("https://gamehub.olekristianfrontend.no/wp-json/wp/v2/comments", {
+  const response = await fetch(`${baseUrl}/comments`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,4 +30,11 @@ async function postComment(commentData) {
   return data;
 }
 
-export { getPosts, getSpecificPost, postComment };
+async function getCommentSection(postId) {
+  const response = await fetch(`${baseUrl}/comments?post=${postId}`);
+  const data = await response.json();
+  return data;
+}
+
+export { getPosts, getSpecificPost, postComment, getCommentSection };
+

@@ -1,4 +1,4 @@
-import { getSpecificPost, postComment } from './api.js';
+import { getSpecificPost, postComment, getCommentSection } from './api.js';
 
 const container = document.querySelector(".blog");
 const title = document.querySelector(".title")
@@ -10,6 +10,19 @@ async function displaySpecificPost() {
   const post = await getSpecificPost(id);
   title.innerHTML = `Meta Corner | ${post.title.rendered}`
   container.innerHTML = `<div>${post.content.rendered}</div>`;
+  displayComments(id); 
+}
+
+async function displayComments(postId) {
+  const comments = await getCommentSection(postId);
+  const commentsContainer = document.querySelector(".comments");
+  commentsContainer.innerHTML = ""; 
+  comments.forEach(comment => {
+    commentsContainer.innerHTML += `<div class="comment">
+      <h3>${comment.author_name}</h3>
+      <p>${comment.content.rendered}</p>
+    </div>`;
+  });
 }
 
 displaySpecificPost();
@@ -36,9 +49,11 @@ commentForm.addEventListener("submit", async (event) => {
     document.getElementById("comment-author").value = "";
     document.getElementById("comment-email").value = "";
     document.getElementById("comment-content").value = "";
+    displayComments(id); 
   } catch (error) {
     console.error("Error:", error);
     alert("There was an error submitting your comment. Please try again.");
   }
 });
+
 
