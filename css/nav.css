@@ -1,13 +1,22 @@
 .menu {
   background: black;
 }
+
 .navigation {
   color: white;
-    font-size: 22px;
-    position: relative;
-    top: 15px;
+  font-size: 22px;
+  position: relative;
+  top: 15px;
 }
+
 @media screen and (max-width: 1024px) {
+  .logo{
+    margin-top: 10px;
+  }
+  .nav {
+    position: relative;
+    z-index: 1;
+  }
   .nav,
   .nav > input {
     display: block;
@@ -70,14 +79,19 @@
     transform: rotate(-45deg);
   }
 
-  .menu {
+  .menu-container {
     position: absolute;
     width: 100%;
-    top: 0;
+    top: 0; 
     left: 0;
-    list-style-type: none;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
+    background: black; 
+  }
+
+  .menu {
+    width: 100%;
+    list-style-type: none;
     padding: 10px 0px 40px 0px;
   }
 
@@ -86,11 +100,11 @@
     text-align: center;
   }
 
-  .nav > input:checked ~ ul {
+  .nav > input:checked ~ .menu-container {
     transform: none;
   }
-  
 }
+
 @media screen and (max-width: 500px) {
   .logo{
     width: 200px;
@@ -102,6 +116,7 @@
     width: 250px;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .checkbox {
     display: none;
@@ -114,18 +129,26 @@
     height: 70px;
   }
 
-  .menu {
+  .menu-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
   }
-  
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: none;
+  }
+
   .menu > li {
     display: flex;
     margin: 0 20px;
   }
-  
+
   .logo {
     position: absolute;
     left: 40px;
