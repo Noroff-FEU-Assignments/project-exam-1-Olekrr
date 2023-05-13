@@ -9,7 +9,8 @@ p {
     height: auto;
 }
 
-.blog {
+.blog,
+.comment-form {
     width: min(65ch, 100% - 4rem);
     margin-inline: auto;
 }

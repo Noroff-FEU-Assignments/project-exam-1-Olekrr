@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title class="title">Document</title>
+    <meta name="author" content="Ole Kristian Rasmussen" />
+    <meta name="description" content="Meta corner blog post and comment section">
+    <title class="title"></title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body class="blogpage">
@@ -28,7 +30,7 @@
     <main>
       <div class="blog"></div>
       <div class="comment-form">
-        <h3>Leave a comment:</h3>
+        <h2>Leave a comment:</h2>
         <form id="submit-comment-form">
           <div>
             <label for="comment-author">Name:</label>
@@ -46,13 +48,12 @@
         </form>
         <div class="comments"></div>
       </div>
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
     </main>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-      <span class="close">&times;</span>
-      <img class="modal-content" id="img01">
-      <div id="caption"></div>
-    </div>
     <footer>
       <script type="module" src="/js/blogspecific.js"></script>
     </footer>

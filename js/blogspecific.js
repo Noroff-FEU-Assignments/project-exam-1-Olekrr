@@ -9,7 +9,10 @@ const id = params.get("id");
 async function displaySpecificPost() {
   const post = await getSpecificPost(id);
   title.innerHTML = `Meta Corner | ${post.title.rendered}`;
-  container.innerHTML = `<div>${post.content.rendered}</div>`;
+  container.innerHTML = `
+  <h1>${post.title.rendered}</h1>
+  <div>${post.content.rendered}</div>
+  `;
   
   const images = container.querySelectorAll('img');
   images.forEach(img => {
