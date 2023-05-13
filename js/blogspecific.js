@@ -6,6 +6,14 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+let modal = document.getElementById('myModal');
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
 async function displaySpecificPost() {
   const post = await getSpecificPost(id);
   title.innerHTML = `Meta Corner | ${post.title.rendered}`;
@@ -13,18 +21,30 @@ async function displaySpecificPost() {
   <h1>${post.title.rendered}</h1>
   <div>${post.content.rendered}</div>
   `;
-  
+  displayImagesInModal();
+  await displayComments(id);
+}
+
+function displayImagesInModal() {
   const images = container.querySelectorAll('img');
   images.forEach(img => {
     img.addEventListener('click', () => {
+      let modalImg = document.createElement("img"); 
+      modalImg.classList.add("modal-content"); 
+      modalImg.id = "img01"; 
+      modalImg.src = img.src; 
+
+      let oldImg = modal.querySelector(".modal-content");
+      if (oldImg) {
+        modal.removeChild(oldImg);
+      }
+
+      modal.appendChild(modalImg);
+
       modal.style.display = "block";
-      modalImg.src = img.src;
     });
   });
-
-  displayComments(id);
 }
-
 
 async function displayComments(postId) {
   const comments = await getCommentSection(postId);
@@ -38,8 +58,6 @@ async function displayComments(postId) {
       </div>`;
   });
 }
-
-displaySpecificPost();
 
 const commentForm = document.getElementById("submit-comment-form");
 
@@ -63,22 +81,11 @@ commentForm.addEventListener("submit", async (event) => {
     document.getElementById("comment-author").value = "";
     document.getElementById("comment-email").value = "";
     document.getElementById("comment-content").value = "";
-    displayComments(id);
+    await displayComments(id);
   } catch (error) {
     console.error("Error:", error);
     alert("There was an error submitting your comment. Please try again.");
   }
 });
 
-
-let modal = document.getElementById('myModal');
-
-
-let modalImg = document.getElementById('img01');
-
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+displaySpecificPost();
