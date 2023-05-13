@@ -2,6 +2,14 @@
     font-family: Journeyman;
     src: url(../assets/fonts/journeyman-line.otf);
   }
+@font-face {
+    font-family: Montserrat;
+    src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../assets/fonts/Roboto-Regular.ttf);
+}
 *{
     margin: 0;
     padding: 0;
@@ -14,13 +22,19 @@
 header{
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 1;
 }
 a{
     text-decoration: none;
 }
-h1, h3{
+h1, h2, a{
     font-family: Journeyman;
+}
+h3, h4{
+    font-family: Montserrat;
+}
+p{
+    font-family: Roboto;
 }
 .logo{
     display: block;
@@ -28,10 +42,20 @@ h1, h3{
     width: 350px;
 }
 .full-logo{
-    width: 40%;
+    width: 60%;
     display: block;
     margin: auto;  
     margin-top: 20px;
     margin-bottom: 20px;
     margin-top: -30px;
-  }
+}
+@media (min-width: 500px) {
+    .full-logo{
+        width: 40%;
+    }
+}
+@media (min-width: 1025px) {
+    .full-logo{
+        display: none;
+    }
+}

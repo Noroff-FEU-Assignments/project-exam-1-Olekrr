@@ -17,7 +17,7 @@ async function getPosts(urlParameters, container) {
     container.innerHTML +=  `
       <a href="blogspecific.html?id=${post.id}">
         <div class="sectionpost">
-          <h4>${post.title.rendered}</h4>
+          <h3>${post.title.rendered}</h3>
           <img class="section-image" src="${featuredImageUrl}" alt="${post.title.rendered}">
         </div>
       </a>

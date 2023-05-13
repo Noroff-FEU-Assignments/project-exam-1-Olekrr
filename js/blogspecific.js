@@ -10,8 +10,18 @@ async function displaySpecificPost() {
   const post = await getSpecificPost(id);
   title.innerHTML = `Meta Corner | ${post.title.rendered}`;
   container.innerHTML = `<div>${post.content.rendered}</div>`;
+  
+  const images = container.querySelectorAll('img');
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
   displayComments(id);
 }
+
 
 async function displayComments(postId) {
   const comments = await getCommentSection(postId);
@@ -56,3 +66,16 @@ commentForm.addEventListener("submit", async (event) => {
     alert("There was an error submitting your comment. Please try again.");
   }
 });
+
+
+let modal = document.getElementById('myModal');
+
+
+let modalImg = document.getElementById('img01');
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};

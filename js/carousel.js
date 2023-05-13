@@ -15,7 +15,7 @@ async function getPosts() {
     slide.innerHTML += `
     <a href="blogspecific.html?id=${post.id}">
       <div class="post">
-        <h2><span>${post.title.rendered}</span></h2>
+        <h3><span>${post.title.rendered}</span></h3>
         <img src="${post._embedded['wp:featuredmedia'][0].source_url}" alt="${post.title.rendered}">
       </div>
       </a>
