@@ -1,50 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ole Kristian Rasmussen">
-    <meta name="description" content="Meta corner blog overview. Contains listings of all blog posts as well as a way to filter through them">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ole Kristian Rasmussen" />
+    <meta
+      name="description"
+      content="Meta corner blog overview. Contains listings of all blog posts as well as a way to filter through them"
+    />
     <title>Meta Corner | Blogs</title>
-    <link rel="stylesheet" href="/css/nav.css">
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/bloglist.css">
-</head>
-<body class="homepage">
-  <header>
-    <nav class="nav">
-      <input class="checkbox" type="checkbox">
-      <span></span>
-      <span></span>
-      <span></span>
-      <div class="menu-container">
-        <a class="logo" href="index.html">
-        <img class="logo" src="/assets/images/logo1.png" alt="meta corner logo">
-        </a>
-        <ul class="menu">
-          <li><a class="navigation" href="index.html">Home</a></li>
-          <li><a class="navigation" href="bloglist.html">Blogs</a></li>
-          <li><a class="navigation" href="contact.html">Contact</a></li>
-          <li><a class="navigation" href="about.html">About</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    <link rel="stylesheet" href="/css/nav.css" />
+    <link rel="stylesheet" href="/css/general.css" />
+    <link rel="stylesheet" href="/css/bloglist.css" />
+  </head>
+  <body class="homepage">
+    <header>
+      <nav class="nav">
+        <input class="checkbox" type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-container">
+          <a class="logo" href="index.html">
+            <img
+              class="logo"
+              src="/assets/images/logo1.png"
+              alt="meta corner logo"
+            />
+          </a>
+          <ul class="menu">
+            <li><a class="navigation" href="index.html">Home</a></li>
+            <li><a class="navigation" href="bloglist.html">Blogs</a></li>
+            <li><a class="navigation" href="contact.html">Contact</a></li>
+            <li><a class="navigation" href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main>
-      <img class="full-logo" src="assets/images/logo3.png" alt="meta corner logo">
-      <select id="filter-dropdown">
-        <option value="all">All</option>
-        <option value="review">Review</option>
-        <option value="news">News</option>
-        <option value="date old">Date old > new</option>
-        <option value="date new">Date new > old</option>
-      </select>
-      <div class="content-container"></div>
+      <h1>Welcome to our blog!</h1>
+      <img
+        class="full-logo"
+        src="assets/images/logo3.png"
+        alt="meta corner logo"
+      />
+      <div class="filter-container">
+        <h2>Filter</h2>
+        <select id="filter-dropdown">
+          <option value="all">All</option>
+          <option value="review">Review</option>
+          <option value="news">News</option>
+          <option value="date old">Date old > new</option>
+          <option value="date new">Date new > old</option>
+        </select>
+      </div>
+      <div class="content-container">
+        
+      </div>
       <button id="view-more" class="view-more-button">View more</button>
     </main>
     <footer>
       <script type="module" src="/js/bloglist.js"></script>
     </footer>
-</body>
+  </body>
 </html>

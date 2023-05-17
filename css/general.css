@@ -27,6 +27,10 @@ h3 >span:hover{
 a{
     text-decoration: none;
 }
+h1{
+    text-align: center;
+    margin-top: 20px;
+}
 h1, h2, a{
     font-family: Journeyman;
 }
@@ -34,7 +38,8 @@ h3, h4{
     font-family: Montserrat;
 }
 
-p{
+p,
+button{
     font-family: Roboto;
     line-height: 1.3;
 }

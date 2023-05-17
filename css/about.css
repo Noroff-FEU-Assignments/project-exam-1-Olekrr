@@ -2,10 +2,7 @@ main{
     width: min(70ch, 100% - 7rem);
     margin-inline: auto;
 }
-h1{
-    margin: 50px 0;
-    text-align: center;
-}
+
 p{
     margin: 20px 0px;
 }

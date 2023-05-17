@@ -39,12 +39,16 @@ fetchAllPosts().then(() => {
 });
 
 function displayPosts(results, limit, startIndex = 0) {
+  document.querySelectorAll('.empty-post').forEach(el => el.remove());
+
+  let postHTML = '';
+  let emptyPostHTML = '';
+
   for (let i = startIndex; i < startIndex + limit && i < results.length; i++) {
     const post = results[i];
     const featuredUrl = post._embedded['wp:featuredmedia'][0];
-    console.log(post)
 
-    contentContainer.innerHTML += `
+    postHTML += `
       <a href="blogspecific.html?id=${post.id}">
         <div class="post-item">
           <h3>${post.title.rendered}</h3>
@@ -53,7 +57,15 @@ function displayPosts(results, limit, startIndex = 0) {
       </a>
     `;
   }
+
+  for (let i = results.length % 5; i < 5; i++) {
+    emptyPostHTML += `<div class="empty-post"></div>`;
+  }
+
+  contentContainer.innerHTML += postHTML + emptyPostHTML;
 }
+
+
 
 function toggleViewMoreButton(results, displayedCount) {
   if (results.length > displayedCount) {
