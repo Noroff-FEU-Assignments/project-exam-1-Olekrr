@@ -1,25 +1,20 @@
-import { getPosts } from "./api.js";
+import { getPosts } from './api.js';
 
 let allPosts;
 let filteredResults;
 
 const contentContainer = document.querySelector(".content-container");
 const filterDropdown = document.getElementById("filter-dropdown");
-const viewMoreButton = document.getElementById("view-more");
+const viewMoreButton = document.getElementById('view-more');
 
-// Fetching posts from API
-async function fetchAllPosts() {
-  allPosts = await getPosts();
-}
-
-
-function displayPosts(results, limit, startIndex = 0) {
-  // Remove dummy posts used to fill rows.
-  document.querySelectorAll(".empty-post").forEach(el => el.remove());
+function displayPosts(results, limit, startIndex = 0, includeEmptyPosts = false) {
+  // Remove existing empty posts
+  document.querySelectorAll('.empty-post').forEach(el => el.remove());
 
   let postHTML = '';
   let emptyPostHTML = '';
 
+  // Generate HTML for each post
   for (let i = startIndex; i < startIndex + limit && i < results.length; i++) {
     const post = results[i];
     const featuredUrl = post._embedded['wp:featuredmedia'][0];
@@ -34,16 +29,29 @@ function displayPosts(results, limit, startIndex = 0) {
     `;
   }
 
-  // Create dummy posts to fill out row for cleaner view when view more button is clicked.
-  for (let i = results.length % 5; i < 5; i++) {
-    emptyPostHTML += `<div class="empty-post"></div>`;
+  // Generate HTML for empty posts if required
+  const totalDisplayedPosts = Math.min(startIndex + limit, results.length);
+  if (includeEmptyPosts && totalDisplayedPosts % 5 !== 0) {
+    for (let i = totalDisplayedPosts % 5; i < 5; i++) {
+      emptyPostHTML += `<div class="empty-post"></div>`;
+    }
   }
 
-  // adding to container.
   contentContainer.innerHTML += postHTML + emptyPostHTML;
 }
 
-// Filter function.
+function toggleViewMoreButton(results, displayedCount) {
+  if (results.length > displayedCount) {
+    viewMoreButton.style.display = 'block';
+  } else {
+    viewMoreButton.style.display = 'none';
+  }
+}
+
+async function fetchAllPosts() {
+  allPosts = await getPosts();
+}
+
 async function filterPosts(filter) {
   if (filter === "review") {
     filteredResults = allPosts.filter(post => post.categories.includes(19));
@@ -57,37 +65,24 @@ async function filterPosts(filter) {
     filteredResults = allPosts;
   }
 
-  // clear out posts and show new based on chosen filter
   contentContainer.innerHTML = "";
-  displayPosts(filteredResults, 10);
+  displayPosts(filteredResults, 10, 0, window.innerWidth > 1024);
   toggleViewMoreButton(filteredResults, 10);
 }
 
-// toggels view more button if there are more elements available for filtered category
-function toggleViewMoreButton(results, displayedCount) {
-  if (results.length > displayedCount) {
-    viewMoreButton.style.display = "block";
-  } else {
-    viewMoreButton.style.display = "none";
-  }
-}
-
-// view more button listener to load another 10 posts
-viewMoreButton.addEventListener("click", () => {
-  const currentPostsCount = contentContainer.querySelectorAll(".post-item").length;
-  displayPosts(filteredResults, 10, currentPostsCount);
-  toggleViewMoreButton(filteredResults, currentPostsCount + 10);
-});
-
-// event listener for changes in filtering options
 filterDropdown.addEventListener("change", () => {
   const selectedFilter = filterDropdown.value;
   filterPosts(selectedFilter);
 });
 
-// fetches posts and starts filter on all
 fetchAllPosts().then(() => {
-  filterPosts("all");
+  filterPosts('all');
+});
+
+viewMoreButton.addEventListener('click', () => {
+  const currentPostsCount = contentContainer.querySelectorAll('.post-item').length;
+  displayPosts(filteredResults, 10, currentPostsCount, window.innerWidth > 1024);
+  toggleViewMoreButton(filteredResults, currentPostsCount + 10);
 });
 
 

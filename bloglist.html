@@ -10,24 +10,19 @@
       content="Meta corner blog overview. Contains listings of all blog posts as well as a way to filter through them"
     />
     <title>Meta Corner | Blogs</title>
-    <link rel="stylesheet" href="/css/nav.css" />
-    <link rel="stylesheet" href="/css/general.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/bloglist.css" />
   </head>
   <body class="homepage">
     <header>
       <nav class="nav">
-        <input class="checkbox" type="checkbox" />
+        <input class="checkbox" type="checkbox">
         <span></span>
         <span></span>
         <span></span>
         <div class="menu-container">
           <a class="logo" href="index.html">
-            <img
-              class="logo"
-              src="/assets/images/logo1.png"
-              alt="meta corner logo"
-            />
+          <img class="logo" src="/assets/images/logo1.png" alt="meta corner logo">
           </a>
           <ul class="menu">
             <li><a class="navigation" href="index.html">Home</a></li>
@@ -39,24 +34,26 @@
       </nav>
     </header>
     <main>
-      <h1>Welcome to our blog!</h1>
       <img
         class="full-logo"
         src="assets/images/logo3.png"
         alt="meta corner logo"
       />
-      <div class="filter-container">
-        <h2>Filter</h2>
-        <select id="filter-dropdown">
-          <option value="all">All</option>
-          <option value="review">Review</option>
-          <option value="news">News</option>
-          <option value="date old">Date old > new</option>
-          <option value="date new">Date new > old</option>
-        </select>
-      </div>
-      <div class="content-container">
-        
+      <h1>Welcome to our blog!</h1>
+      <div class="content-wrapper">
+        <div class="filter-container">
+          <h2>Filter</h2>
+          <select id="filter-dropdown">
+            <option value="all">All</option>
+            <option value="review">Review</option>
+            <option value="news">News</option>
+            <option value="date old">Date old > new</option>
+            <option value="date new">Date new > old</option>
+          </select>
+        </div>
+        <div class="content-container">
+          <!-- Your post items go here -->
+        </div>
       </div>
       <button id="view-more" class="view-more-button">View more</button>
     </main>

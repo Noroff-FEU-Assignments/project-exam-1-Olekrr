@@ -1,10 +1,7 @@
 :root {
   --black: #000000;
 }
-h1{
-  text-align: center;
-  margin:30px 0px;
-}
+
 h2{
   text-align: center;
   margin-top: 10px;
@@ -123,4 +120,5 @@ body{
   h3{
     font-size: 16px;
   }
+  
 }
