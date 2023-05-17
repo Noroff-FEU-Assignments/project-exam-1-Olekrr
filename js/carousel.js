@@ -11,12 +11,12 @@ async function getPosts() {
 
   for (let i = 0; i < results.length; i++) {
     const post = results[i];
-    
+    const featuredUrl = post._embedded['wp:featuredmedia'][0];
     slide.innerHTML += `
     <a href="blogspecific.html?id=${post.id}">
       <div class="post">
         <h3><span>${post.title.rendered}</span></h3>
-        <img src="${post._embedded['wp:featuredmedia'][0].source_url}" alt="${post.title.rendered}">
+        <img src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">
       </div>
       </a>
     `;

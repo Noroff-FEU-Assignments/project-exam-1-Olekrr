@@ -7,9 +7,9 @@
     <meta name="author" content="Ole Kristian Rasmussen">
     <meta name="description" content="Meta corner blog homepage, showing latest post in a content carousel, as well as sections containing news and reviews">
     <title>Meta Corner | Home</title>
-    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/carousel.css">
     <link rel="stylesheet" href="/css/homepagesections.css">
+    <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body class="homepage">
     <header>
@@ -19,7 +19,9 @@
         <span></span>
         <span></span>
         <div class="menu-container">
+          <a class="logo" href="index.html">
           <img class="logo" src="/assets/images/logo1.png" alt="meta corner logo">
+          </a>
           <ul class="menu">
             <li><a class="navigation" href="index.html">Home</a></li>
             <li><a class="navigation" href="bloglist.html">Blogs</a></li>
@@ -44,12 +46,20 @@
       </div>
 
       <div class="sections-container">
-        <section class="reviews-container">
+        <section class="reviews-container sub-container">
           <h2>Reviews</h2>
+          <div class="reviews-post-container"></div>
         </section>
-        <section class="news-container">
+        <section class="news-container sub-container">
           <h2>News</h2>
-      </section>
+          <div class="news-post-container"></div>
+        </section>
+        <div class="sticky-wrapper sub-container">
+          <section class="trending-container">
+            <h2>Trending</h2>
+            <div class="trending-posts-container"></div>
+          </section>
+        </div>
       </div>
 
     </main>
@@ -59,3 +69,4 @@
     </footer>
   </body>
 </html>
+

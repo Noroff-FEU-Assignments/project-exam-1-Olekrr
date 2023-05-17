@@ -13,9 +13,12 @@
   .logo{
     margin-top: 10px;
   }
+  nav{
+    z-index: 2;
+  }
   .nav {
     position: relative;
-    z-index: 1;
+   
   }
   .nav,
   .nav > input {
@@ -28,7 +31,7 @@
 
   .nav {
     padding: 10px;
-    z-index: 1;
+    z-index: 5;
   }
 
   .nav > a {
@@ -114,6 +117,8 @@
 @media screen and (min-width: 1025px) and (max-width: 1250px) {
   .logo{
     width: 250px;
+    position: absolute;
+    margin-top: 5px;
   }
 }
 
@@ -127,6 +132,7 @@
     padding: 10px;
     background: black;
     height: 70px;
+    border-bottom: 5px solid #ff0000;
   }
 
   .menu-container {
@@ -151,7 +157,8 @@
 
   .logo {
     position: absolute;
-    left: 40px;
+    left: 20px;
+    top: 7px;
     height: auto;
   }
 

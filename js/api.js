@@ -1,7 +1,7 @@
 const baseUrl = "https://gamehub.olekristianfrontend.no/wp-json/wp/v2";
 
 async function getPosts(urlParameters = "") {
-  const response = await fetch(`${baseUrl}/posts?_embed&per_page=100${urlParameters}`);
+  const response = await fetch(`${baseUrl}/posts?_embed&per_page=12${urlParameters}`);
   const results = await response.json();
   return results;
 }

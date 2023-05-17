@@ -6,9 +6,8 @@
   background-image: url(/assets/images/carouselbackground.jpg);
   background-attachment: fixed;
   background-size: cover;
-  border-top: 5px solid #47eaff;
-  border-bottom: 5px solid #47eaff;
-  box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+  border-top: 5px solid #000000;
+  border-bottom: 5px solid #000000;
 }
 .carousel-wrapper {
   overflow: hidden;
@@ -62,7 +61,7 @@
 }
 .post h3 {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   padding: 10px;
   color: #ffffff;

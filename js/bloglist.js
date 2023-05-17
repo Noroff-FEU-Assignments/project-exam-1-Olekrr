@@ -41,13 +41,14 @@ fetchAllPosts().then(() => {
 function displayPosts(results, limit, startIndex = 0) {
   for (let i = startIndex; i < startIndex + limit && i < results.length; i++) {
     const post = results[i];
-    const featuredImageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    const featuredUrl = post._embedded['wp:featuredmedia'][0];
+    console.log(post)
 
     contentContainer.innerHTML += `
       <a href="blogspecific.html?id=${post.id}">
         <div class="post-item">
           <h3>${post.title.rendered}</h3>
-          <img src="${featuredImageUrl}" alt="${post.title.rendered}">
+          <img src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">
         </div>
       </a>
     `;

@@ -1,31 +1,47 @@
 import { getPosts as getPostsFromApi } from './api.js';
 
-const reviewsContainer = document.querySelector(".reviews-container");
-const newsContainer = document.querySelector(".news-container");
+const reviewsContainer = document.querySelector(".reviews-post-container");
+const newsContainer = document.querySelector(".news-post-container");
+const trendingContainer = document.querySelector(".trending-container .trending-posts-container");
 
 const reviewsUrlParameters = "&categories=19"; 
 const newsUrlParameters = "&categories=20"; 
+const trendingUrlParameters = "&categories=21"; 
 
-async function getPosts(urlParameters, container) {
+async function getPosts(urlParameters, container, showImage = true) {
   const results = await getPostsFromApi(urlParameters);
   console.log(results);
 
   for (let i = 0; i < results.length; i++) {
     const post = results[i];
-    const featuredImageUrl = post._embedded['wp:featuredmedia'][0].source_url;
+    let imgHtml = '';
+    let postHtml = '';
 
-    container.innerHTML +=  `
-      <a href="blogspecific.html?id=${post.id}">
-        <div class="sectionpost">
-          <h3>${post.title.rendered}</h3>
-          <img class="section-image" src="${featuredImageUrl}" alt="${post.title.rendered}">
+    if (showImage) {
+      const featuredUrl = post._embedded['wp:featuredmedia'][0];
+      imgHtml = `<img class="post-image" src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">`;
+      postHtml = `
+        <a href="blogspecific.html?id=${post.id}" class="sectionpost">
+          <div class="post-item">
+            <h3>${post.title.rendered}</h3>
+            ${imgHtml}
+          </div>
+        </a>
+      `;
+    } else {
+      postHtml = `
+        <div class="sectionpost trending-post">
+          <a href="blogspecific.html?id=${post.id}">
+            <h3>${post.title.rendered}</h3>
+          </a>
         </div>
-      </a>
-    `;
+      `;
+    }
+    container.innerHTML += postHtml;
   }
 }
 
 getPosts(reviewsUrlParameters, reviewsContainer);
 getPosts(newsUrlParameters, newsContainer);
-
+getPosts(trendingUrlParameters, trendingContainer, false);
 
