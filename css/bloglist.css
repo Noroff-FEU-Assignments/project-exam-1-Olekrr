@@ -1,14 +1,15 @@
 body{
   box-sizing: border-box;
 }
+
 h2{
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
 .filter-container {
   width: 80%;
   margin: auto;
-  transform: translateX(10px);
 }
 
 #filter-dropdown {
@@ -35,17 +36,14 @@ h2{
 .content-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   width: 80%;
   margin: auto;
 }
-.empty-post {
-  width: calc(18% - 20px);
-  margin: 10px;
-}
+
 .content-container a {
   position: relative;
-  width: calc(18% - 20px);
+  width: 18%;
   height: 200px;
   overflow: hidden;
   margin: 10px;
@@ -95,6 +93,7 @@ h2{
   color: #2c3c3c;
   transition: all 0.3s;
   text-align: center; 
+  
 }
 
 .view-more-button:hover {
@@ -104,4 +103,23 @@ h2{
 .view-more-button:focus {
   outline: none;
   box-shadow: 0 0 0 3px #ff0000;
+}
+.empty-post {
+  width: 18%;
+  height: 200px;
+  margin: 10px;
+}
+
+@media (max-width: 1024px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .empty-post {
+    display: none;
+  }
+  .content-container a {
+    width: 80%;
+    margin: 10px auto;
+  }
 }
