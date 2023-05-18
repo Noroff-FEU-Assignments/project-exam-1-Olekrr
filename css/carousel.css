@@ -6,6 +6,7 @@
   background-image: url(/assets/images/carouselbackground.jpg);
   background-attachment: fixed;
   background-size: cover;
+  margin-top: 50px;
   border-top: 5px solid #000000;
   border-bottom: 5px solid #000000;
 }
