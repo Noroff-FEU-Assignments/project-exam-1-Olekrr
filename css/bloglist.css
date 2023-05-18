@@ -63,9 +63,10 @@ h2{
   border-radius: 10px;
   text-decoration: none;
   background: black; 
+  box-shadow: 0 0 20px  #000000d5;
 }
-.content-container a:hover h3 {
-  color: red;
+.content-container a:hover{
+  box-shadow: 0 0 20px  #ff0000d5;
 }
 
 .content-container a img {

@@ -12,6 +12,10 @@ async function getPosts(urlParameters, container, showImage = true) {
   const results = await getPostsFromApi(urlParameters);
   console.log(results);
 
+  // Create a new div to contain the posts
+  let postContainer = document.createElement("div");
+  postContainer.classList.add("post-container");
+
   for (let i = 0; i < results.length; i++) {
     const post = results[i];
     let imgHtml = '';
@@ -37,9 +41,20 @@ async function getPosts(urlParameters, container, showImage = true) {
         </div>
       `;
     }
-    container.innerHTML += postHtml;
+
+    // Create a new post element and set its innerHTML
+    let postElement = document.createElement("div");
+    postElement.innerHTML = postHtml;
+
+    // Append the new post element to the postContainer
+    postContainer.appendChild(postElement);
   }
+
+  // Append the new div to the container
+  container.appendChild(postContainer);
 }
+
+
 
 getPosts(reviewsUrlParameters, reviewsContainer);
 getPosts(newsUrlParameters, newsContainer);
