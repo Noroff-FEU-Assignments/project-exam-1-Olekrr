@@ -1,3 +1,14 @@
+const form = document.querySelector(".contactform");
+const userName = document.querySelector("#name");
+const nameError = document.querySelector("#name-error");
+const subject = document.querySelector("#subject");
+const subjectError = document.querySelector("#subject-error");
+const email = document.querySelector("#email");
+const emailError = document.querySelector("#email-error");
+const message = document.querySelector("#message");
+const messageError = document.querySelector("#message-error");
+
+
 function length(value, len) {
   if (value.trim().length > len) {
     return true;
@@ -11,16 +22,6 @@ function validateEmail(email) {
   const patternMatches = regEx.test(email);
   return patternMatches;
 }
-
-const form = document.querySelector(".contactform");
-const userName = document.querySelector("#name");
-const nameError = document.querySelector("#name-error");
-const subject = document.querySelector("#subject");
-const subjectError = document.querySelector("#subject-error");
-const email = document.querySelector("#email");
-const emailError = document.querySelector("#email-error");
-const message = document.querySelector("#message");
-const messageError = document.querySelector("#message-error");
 
 // Form validation
 function validateForm(event) {
@@ -78,7 +79,16 @@ function validateForm(event) {
       }
       return response.json();
     })
-    .then(data => console.log('Success:', data))
+    .then(data => {
+      console.log('Success:', data);
+      // Clear input fields after successful data submission
+      userName.value = "";
+      subject.value = "";
+      email.value = "";
+      message.value = "";
+      // Show an alert on successful submission
+      alert('Form submitted successfully');
+    })
     .catch((error) => {
       console.error('Error:', error);
     });

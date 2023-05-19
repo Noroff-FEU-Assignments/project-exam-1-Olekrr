@@ -26,7 +26,7 @@ async function displaySpecificPost() {
 }
 
 function displayImagesInModal() {
-  const images = container.querySelectorAll('img');
+  const images = container.querySelectorAll("img");
   images.forEach(img => {
     img.addEventListener('click', () => {
       let modalImg = document.createElement("img"); 
@@ -53,7 +53,7 @@ async function displayComments(postId) {
   comments.forEach((comment) => {
     commentsContainer.innerHTML += `
       <div class="comment">
-        <h3>${comment.author_name}</h3>
+        <h4>${comment.author_name}</h4>
         <p>${comment.content.rendered}</p>
       </div>`;
   });

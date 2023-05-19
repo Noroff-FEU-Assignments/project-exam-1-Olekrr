@@ -1,13 +1,13 @@
+:root {
+    --black: #000000;
+    --green: #09ff00;
+    --boxshadow: #000000d5;
+    --white: #ffffff;
+  }
 .blog img {
     max-width: 100%;
     display: block;
     height: auto;
-}
-
-.blog,
-.comment-form {
-    width: min(65ch, 100% - 4rem);
-    margin-inline: auto;
 }
 input{
     width: 100%;
@@ -17,6 +17,35 @@ input{
 textarea{
     width: 100%;
 }
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+button{
+    padding: 10px 50px;
+    margin: 20px 0;
+}
+h1{
+    margin-top: 1px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.wp-block-heading{
+    margin: 20px 0;
+}
+h3{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+h4{
+    margin-bottom: 10px;
+}
+.comment-header{
+    margin-bottom: 10px;
+}
+.blog p{
+    margin-top: 10px;
+}
 .modal {
     display: none;
     position: fixed;
@@ -25,7 +54,7 @@ textarea{
     top: 0;
     width: 100%; 
     height: 100%; 
-    background-color: #000000e6; 
+    background-color: var(--boxshadow); 
     padding: 10%;
     box-sizing: border-box; 
 }
@@ -34,7 +63,7 @@ textarea{
     position: relative; 
     margin: auto;
     display: block;
-    width: 80%;
+    width: 100%;
     max-width: 700px;
     animation-name: zoom;
     animation-duration: 0.6s;
@@ -56,3 +85,83 @@ textarea{
   to {transform:scale(1)}
 }
 
+.blog, .comment-form, .comments .comment {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px var(--boxshadow);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease;
+}
+
+.blog input, .comment-form input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #333333;
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog input:focus, .comment-form input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 5px var(--green);
+}
+
+.blog textarea, .comment-form textarea {
+    width: 100%;
+    height: 100px; 
+    padding: 10px;
+    border: 2px solid #333333;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog textarea:focus, .comment-form textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 5px var(--green);
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-form {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 105px;
+}
+.comments {
+    max-height: 600px;
+    overflow-y: auto; 
+  }
+.comment{
+    width: 80%;
+    margin: auto;
+}
+  
+@media screen and (min-width: 1024px) {
+    .content {
+        flex-direction: row;
+        max-width: 1024px;
+        margin: auto;
+    }
+   .blog{
+    position: relative;
+    top: 10px;
+    width: 600px;
+    margin-right: 50px;
+   }
+   .comments-section{
+    width: 500px;
+   }
+    .comment-form{
+        width: 100%;
+    }
+}

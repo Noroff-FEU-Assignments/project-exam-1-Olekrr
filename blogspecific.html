@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ole Kristian Rasmussen">
-    <meta name="description" content="Meta corner blog post and comment section">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ole Kristian Rasmussen" />
+    <meta
+      name="description"
+      content="Meta corner blog post and comment section"
+    />
     <title class="title">Meta Corner | Blog</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/blogspecific.css">
-</head>
-<body class="blogpage">
-  <header>
-    <nav class="nav">
-      <input class="checkbox" type="checkbox">
-      <span></span>
-      <span></span>
-      <span></span>
-      <div class="menu-container">
-        <a class="logo" href="index.html">
-        <img class="logo" src="/assets/images/logo1.png" alt="meta corner logo">
-        </a>
-        <ul class="menu">
-          <li><a class="navigation" href="index.html">Home</a></li>
-          <li><a class="navigation" href="bloglist.html">Blogs</a></li>
-          <li><a class="navigation" href="contact.html">Contact</a></li>
-          <li><a class="navigation" href="about.html">About</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/blogspecific.css" />
+  </head>
+  <body class="blogpage">
+    <header>
+      <nav class="nav">
+        <input class="checkbox" type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-container">
+          <a class="logo" href="index.html">
+            <img
+              class="logo"
+              src="/assets/images/logo1.png"
+              alt="meta corner logo"
+            />
+          </a>
+          <ul class="menu">
+            <li><a class="navigation" href="index.html">Home</a></li>
+            <li><a class="navigation" href="bloglist.html">Blogs</a></li>
+            <li><a class="navigation" href="contact.html">Contact</a></li>
+            <li><a class="navigation" href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main>
-      <img class="full-logo" src="assets/images/logo3.png" alt="meta corner logo">
-      <div class="blog"></div>
-      <div class="comment-form">
-        <h2>Leave a comment:</h2>
-        <form id="submit-comment-form">
-          <div>
-            <label for="comment-author">Name:</label>
-            <input type="text" id="comment-author" required>
-          </div>
-          <div>
-            <label for="comment-email">Email:</label>
-            <input type="email" id="comment-email" required>
-          </div>
-          <div>
-            <label for="comment-content">Comment:</label>
-            <textarea id="comment-content" rows="5" required></textarea>
-          </div>
-          <button type="submit">Submit comment</button>
-        </form>
-        <div class="comments"></div>
+      <img
+        class="full-logo"
+        src="assets/images/logo3.png"
+        alt="meta corner logo"
+      />
+      <div class="content">
+        <div class="blog"></div>
+        <div class="comments-section">
+        <div class="comment-form">
+          <h2 class="comment-header">Leave a comment:</h2>
+          <form id="submit-comment-form">
+            <div>
+              <label for="comment-author">Name:</label>
+              <input type="text" id="comment-author" required />
+            </div>
+            <div>
+              <label for="comment-email">Email:</label>
+              <input type="email" id="comment-email" required />
+            </div>
+            <div>
+              <label for="comment-content">Comment:</label>
+              <textarea id="comment-content" rows="5" required></textarea>
+            </div>
+            <div class="button-container">
+              <button type="submit">Submit comment</button>
+            </div>
+          </form>
+          <h3>Comments</h3>
+          <div class="comments"></div>
+        </div>
+      </div>
       </div>
       <div id="myModal" class="modal">
         <span class="close">&times;</span>
@@ -60,5 +78,5 @@
     <footer>
       <script type="module" src="/js/blogspecific.js"></script>
     </footer>
-</body>
+  </body>
 </html>

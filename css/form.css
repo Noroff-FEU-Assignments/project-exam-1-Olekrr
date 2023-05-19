@@ -23,9 +23,8 @@
     margin-bottom: 5px;
 }
 
-.contactform input {
+.contactform input, .contactform textarea {
     width: 100%;
-    height: 40px;
     padding: 10px;
     margin-top: 5px;
     background-color: var(--inputbackground);
@@ -34,11 +33,14 @@
     box-sizing: border-box;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.contactform input:focus {
+textarea{
+    height: 100px;
+}
+.contactform input:focus, .contactform textarea:focus {
     border-color: var(--green);
     box-shadow: 0 0 5px var(--green);
 }
+
 
 .contactform .button-container {
     display: flex;
@@ -47,9 +49,6 @@
 }
 
 .form-button {
-    font-size: 1.5em;
-    color: var(--white);
-    background-color: var(--black);
     padding: 10px 50px;
     margin-top: 20px;
 }
@@ -58,7 +57,6 @@
     box-shadow: 0 0 20px  var(--green);
     background-color: var(--green);
 }
-
 .error {
     display: none;
     color: #ff0000;
