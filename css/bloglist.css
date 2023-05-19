@@ -1,3 +1,9 @@
+:root {
+  --black: #000000;
+  --green: #09ff00;
+  --boxshadow: #000000d5;
+  --white: #ffffff;
+}
 body{
   box-sizing: border-box;
 }
@@ -6,45 +12,40 @@ h2{
   margin-top: 20px;
   margin-bottom: 10px;
 }
-
 .content-wrapper {
   width: 80%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: -50px;
 }
-
 .grid-container {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr;
   align-items: start;
 }
-
 .filter-container {
   align-self: center;
+  border-radius: 10px;
+  
+  transition: box-shadow 0.3s ease;
+  margin-top: 100px;
 }
-
 #filter-dropdown {
   padding: 10px 15px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  border: solid 3px black;
-  border: transparent 1%;
-  background-color: #ffffff;
-  color: #2c3c3c;
-  transition: all 0.3s;
+  border: solid 3px var(--black);
+  background-color: var(--white);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  appearance: none; 
 }
-
-#filter-dropdown:hover {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
 #filter-dropdown:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgb(255, 0, 0);
+  border-color: var(--green);
 }
+
 
 .content-container {
   display: flex;
@@ -62,13 +63,9 @@ h2{
   box-sizing: border-box;
   border-radius: 10px;
   text-decoration: none;
-  background: black; 
-  box-shadow: 0 0 20px  #000000d5;
+  background: var(--black); 
+  box-shadow: 0 0 20px  var(--boxshadow);
 }
-.content-container a:hover{
-  box-shadow: 0 0 20px  #ff0000d5;
-}
-
 .content-container a img {
   position: absolute;
   width: 100%;
@@ -81,10 +78,10 @@ h2{
   position: absolute;
   bottom: 0;
   padding: 8px;
-  color: #ffffff;
+  color: var(--white);
   font-size: 3vw;
   width: 100%;
-  background-color: #000000;
+  background-color: var(--black);
   box-sizing: border-box;
   z-index: 1; 
 }
@@ -98,25 +95,11 @@ h2{
 }
 
 .view-more-button {
-  display: block;
+  font-size: 1.2rem;
   width: 200px;
   height: 40px;
   margin: 20px auto;
-  cursor: pointer;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px #00000033;
-  border: solid 3px #000000;
-  background-color: #ffffff;
-  color: #2c3c3c;
-  transition: all 0.3s;
-  text-align: center; 
-}
-
-.view-more-button:hover {
-  border: solid 3px #ff0000;
+  
 }
 
 .responsive-heading {

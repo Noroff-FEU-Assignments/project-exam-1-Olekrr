@@ -36,14 +36,14 @@
       <form class="contactform">
         <div class="formsection">
           <label>
-            Name (minimum characters: 6)
+            Name (min-characters: 6)
             <input name="name" id="name" placeholder="Name">
           </label>
           <div class="error" id="name-error">Please enter name</div>
         </div>
         <div>
           <label>
-            Subject (minimum characters: 16)
+            Subject (min-characters: 16)
             <input name="subject" id="subject" placeholder="Subject">
           </label>
           <div class="error" id="subject-error">Subject is too short</div>
@@ -57,12 +57,14 @@
         </div>
         <div>
           <label>
-            Message (minimum characters: 26)
+            Message (min-characters: 26)
             <input name="message" id="message" placeholder="Message">
           </label>
           <div class="error" id="message-error">Message is too short</div>
         </div>
-        <button class="form-button">Submit</button>
+        <div class="button-container">
+          <button class="form-button">Submit</button>
+      </div>
       </form>
     </main>
     <footer>

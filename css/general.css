@@ -1,3 +1,11 @@
+:root {
+    --black: #000000;
+    --green: #09ff00;
+    --boxshadow: #000000d5;
+    --white: #ffffff;
+    --red: #ff0000;
+    --boxshadowred: #ff0000d5;
+}
 @font-face {
     font-family: Journeyman;
     src: url(../assets/fonts/journeyman-line.otf);
@@ -14,16 +22,16 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 header{
     position: sticky;
     top: 0;
     z-index: 3;
 }
-li>a:hover,
-h3 >span:hover{
-    color: rgb(255, 0, 0);
-  }
 a{
     text-decoration: none;
 }
@@ -31,23 +39,35 @@ h1{
     text-align: center;
     margin-top: 60px;
 }
-
-h1, h2, a{
+h1, h2, a, button{
     font-family: Journeyman;
 }
 h3, h4{
     font-family: Montserrat;
 }
-
-p,
-button{
+p{
     font-family: Roboto;
     line-height: 1.3;
 }
+button {
+    color: var(--white);
+    background-color: var(--black);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 20px  var(--boxshadow);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+button:hover {
+    box-shadow: 0 0 20px  var(--green);
+    background-color: var(--green);
+}
+  
 footer{
     height: 100px;
-    background: black;
-    margin-top: 20px;
+    background: var(--black);
+    margin-top: auto;
 }
 .logo{
     display: block;
@@ -64,8 +84,16 @@ footer{
 }
 .sub-container a:hover h3,
 .carousel-slide a:hover h3,
-.content-container a:hover h3 {
-  color: red;
+.content-container a:hover h3,
+li>a:hover,
+h3 >span:hover {
+  color: var(--red);
+  
+}
+.sub-container a:hover,
+.carousel-slide a:hover,
+.content-container a:hover {
+  box-shadow: 0 0 20px  var(--boxshadowred);
 }
 @media (min-width: 500px) {
     .full-logo{

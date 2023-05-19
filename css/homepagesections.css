@@ -1,10 +1,18 @@
+:root {
+  --black: #000000;
+  --green: #09ff00;
+  --boxshadow: #000000d5;
+  --white: #ffffff;
+}
 h3{
   font-size: 3vw;
 }
 body{
   box-sizing: border-box;
 }
-
+.grid-sections{
+  margin-bottom: 50px;
+}
 .reviews-post-container a,
 .news-post-container a{
   position: relative;
@@ -15,9 +23,9 @@ body{
   box-sizing: border-box;
   border-radius: 10px;
   text-decoration: none;
-  background: black; 
+  background: var(--black); 
   margin-top: 20px;
-  box-shadow: 0 0 20px  #000000d5;
+  box-shadow: 0 0 20px  var(--boxshadow);
 }
 .reviews-post-container a img,
 .news-post-container a img{
@@ -33,18 +41,9 @@ body{
   bottom: 0;
   padding: 10px;
   height: 50px;
-  color: #ffffff;
+  color: var(--white);
   width: 100%;
-  background-color: rgb(0, 0, 0);
-  box-sizing: border-box;
-  z-index: 1; 
-}
-.trending-post a h3{
-  padding: 10px;
-  height: 50px;
-  color: #ffffff;
-  width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--black);
   box-sizing: border-box;
   z-index: 1; 
 }
@@ -53,10 +52,6 @@ body{
   width: 70%;
   margin: auto;
 }
-.reviews-post-container a:hover,
-.news-post-container a:hover{
-  box-shadow: 0 0 20px  #ff0000d5;
-}
 .reviews-post-container a:hover img ,
 .news-post-container a:hover img {
   transform: scale(1.05);
@@ -64,42 +59,32 @@ body{
 .sticky-wrapper{
   width: 50%;
   margin: auto;
+  margin-top: 40px;
 }
 .trending-container{
-  width: 80%;
-  margin: auto;
-}
-.trending-posts-container{
-  margin-top: 20px;
-  box-shadow: 0 0 10px black;
-  border-radius: 10px;
-}
-.trending-posts-container:hover{
-  box-shadow: 0 0 10px #ff0000;
+  width: 70%;
 }
 .trending-post {
-  border: none;
-  border-radius: 0;
-  padding: 20px;
-}
-.trending-post:first-child {
-  border-radius: 10px 10px 0 0;
-}
-.trending-container .sectionpost:last-child {
-  border-radius: 0 0 10px 10px;
+  margin-top: 20px;
 }
 
-.reviews-post-container .post-container, .news-post-container .post-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1em;
+.trending-post a {
+  color: inherit; 
+  text-decoration: none; 
+  display: block; 
+  background-color: var(--white); 
+  margin-bottom: 15px; 
+  border-radius: 10px; 
+  box-shadow: 0px 5px 15px var(--boxshadow);
+  transition: box-shadow 0.3s ease; 
+  padding: 20px;
 }
 
 
 @media screen and (min-width: 762px) {
   .reviews-post-container a,
   .news-post-container a{
-    height: 300px;
+    height: 200px;
   }
   h2{
     margin-top: 40px;
@@ -134,7 +119,7 @@ body{
   }
   .reviews-post-container a,
   .news-post-container a {
-    height: 300px;
+    height: 200px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -160,10 +145,38 @@ body{
   .reviews-post-container .post-container, .news-post-container .post-container {
     grid-template-columns: 1fr;
   }
+  .reviews-post-container a,
+  .news-post-container a{
+    height: 250px;
+  }
+  .trending-container{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .reviews-post-container a,
+  .news-post-container a{
+    height: 150px;
+  }
+  .trending-container{
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+  .reviews-post-container a,
+  .news-post-container a{
+    height: 150px;
+  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1500px) {
   .reviews-post-container .post-container, .news-post-container .post-container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1500px) and (max-width: 1900px){
+  .reviews-post-container a,
+  .news-post-container a{
+    height: 150px;
   }
 }
 @media screen and (min-width: 1501px) {

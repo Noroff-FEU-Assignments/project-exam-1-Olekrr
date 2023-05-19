@@ -1,3 +1,8 @@
+:root {
+  --black: #000000;
+  --boxshadow: #000000d5;
+  --white: #ffffff;
+}
 /*Main carousel container*/
 .carousel-outer-styling {
   position: relative;
@@ -7,8 +12,8 @@
   background-attachment: fixed;
   background-size: cover;
   margin-top: 50px;
-  border-top: 5px solid #000000;
-  border-bottom: 5px solid #000000;
+  border-top: 5px solid var(--black);
+  border-bottom: 5px solid var(--black);
  
 }
 .carousel-wrapper {
@@ -44,7 +49,7 @@
   display: block;
   width: calc(25% - 10px);
   height: 98%;
-  box-shadow: 0 0 20px  #000000d5;
+  box-shadow: 0 0 20px  var(--black);
 }
 
 .carousel-slide img {
@@ -65,18 +70,15 @@
   border-radius: 10px;
   
 }
-.post:hover{
-  box-shadow: 0 0 20px  #ff0000d5;
-}
 .post h3 {
   position: absolute;
   bottom: 0;
   left: 0;
   padding: 10px;
-  color: #ffffff;
+  color: var(--white);
   font-size: 1.2rem;
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--black);
   box-sizing: border-box;
   z-index: 1;
 }
@@ -93,8 +95,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #ffffff;
+  background-color: var(--boxshadow);
+  color: var(--white);
   border: solid;
   cursor: pointer;
   padding: 10px 20px;
@@ -105,8 +107,7 @@
   transition: opacity 0.3s; 
 }
 .arrow-btn:hover {
-  background-color: rgba(255, 0, 0, 0.651);
-  color: #000000;
+  color: var(--black);
   opacity: 1;
 }
 .prev-btn {
