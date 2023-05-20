@@ -6,9 +6,9 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-let modal = document.getElementById('myModal');
+let modal = document.getElementById("myModal");
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
@@ -27,12 +27,12 @@ async function displaySpecificPost() {
 
 function displayImagesInModal() {
   const images = container.querySelectorAll("img");
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      let modalImg = document.createElement("img"); 
-      modalImg.classList.add("modal-content"); 
-      modalImg.id = "img01"; 
-      modalImg.src = img.src; 
+  images.forEach((img) => {
+    img.addEventListener("click", () => {
+      let modalImg = document.createElement("img");
+      modalImg.classList.add("modal-content");
+      modalImg.id = "img01";
+      modalImg.src = img.src;
 
       let oldImg = modal.querySelector(".modal-content");
       if (oldImg) {

@@ -1,23 +1,28 @@
-import { getPosts } from './api.js';
+import { getPosts } from "./api.js";
 
 let allPosts;
 let filteredResults;
 
 const contentContainer = document.querySelector(".content-container");
 const filterDropdown = document.getElementById("filter-dropdown");
-const viewMoreButton = document.getElementById('view-more');
+const viewMoreButton = document.getElementById("view-more");
 
-function displayPosts(results, limit, startIndex = 0, includeEmptyPosts = false) {
+function displayPosts(
+  results,
+  limit,
+  startIndex = 0,
+  includeEmptyPosts = false
+) {
   // Remove existing empty posts
-  document.querySelectorAll('.empty-post').forEach(el => el.remove());
+  document.querySelectorAll(".empty-post").forEach((el) => el.remove());
 
-  let postHTML = '';
-  let emptyPostHTML = '';
+  let postHTML = "";
+  let emptyPostHTML = "";
 
   // Generate HTML for each post
   for (let i = startIndex; i < startIndex + limit && i < results.length; i++) {
     const post = results[i];
-    const featuredUrl = post._embedded['wp:featuredmedia'][0];
+    const featuredUrl = post._embedded["wp:featuredmedia"][0];
 
     postHTML += `
       <a href="blogspecific.html?id=${post.id}">
@@ -42,9 +47,9 @@ function displayPosts(results, limit, startIndex = 0, includeEmptyPosts = false)
 
 function toggleViewMoreButton(results, displayedCount) {
   if (results.length > displayedCount) {
-    viewMoreButton.style.display = 'block';
+    viewMoreButton.style.display = "block";
   } else {
-    viewMoreButton.style.display = 'none';
+    viewMoreButton.style.display = "none";
   }
 }
 
@@ -54,13 +59,17 @@ async function fetchAllPosts() {
 
 async function filterPosts(filter) {
   if (filter === "review") {
-    filteredResults = allPosts.filter(post => post.categories.includes(19));
+    filteredResults = allPosts.filter((post) => post.categories.includes(19));
   } else if (filter === "news") {
-    filteredResults = allPosts.filter(post => post.categories.includes(20));
+    filteredResults = allPosts.filter((post) => post.categories.includes(20));
   } else if (filter === "date old") {
-    filteredResults = [...allPosts].sort((a, b) => new Date(a.date) - new Date(b.date));
+    filteredResults = [...allPosts].sort(
+      (a, b) => new Date(a.date) - new Date(b.date)
+    );
   } else if (filter === "date new") {
-    filteredResults = [...allPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
+    filteredResults = [...allPosts].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
   } else {
     filteredResults = allPosts;
   }
@@ -76,16 +85,17 @@ filterDropdown.addEventListener("change", () => {
 });
 
 fetchAllPosts().then(() => {
-  filterPosts('all');
+  filterPosts("all");
 });
 
-viewMoreButton.addEventListener('click', () => {
-  const currentPostsCount = contentContainer.querySelectorAll('.post-item').length;
-  displayPosts(filteredResults, 10, currentPostsCount, window.innerWidth > 1024);
+viewMoreButton.addEventListener("click", () => {
+  const currentPostsCount =
+    contentContainer.querySelectorAll(".post-item").length;
+  displayPosts(
+    filteredResults,
+    10,
+    currentPostsCount,
+    window.innerWidth > 1024
+  );
   toggleViewMoreButton(filteredResults, currentPostsCount + 10);
 });
-
-
-
-
-

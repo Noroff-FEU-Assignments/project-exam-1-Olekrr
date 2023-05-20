@@ -1,8 +1,3 @@
-:root {
-  --black: #000000;
-  --boxshadow: #000000d5;
-  --white: #ffffff;
-}
 /*Main carousel container*/
 .carousel-outer-styling {
   position: relative;
@@ -14,8 +9,8 @@
   margin-top: 50px;
   border-top: 5px solid var(--black);
   border-bottom: 5px solid var(--black);
- 
 }
+
 .carousel-wrapper {
   overflow: hidden;
   height: 300px;
@@ -24,6 +19,7 @@
   margin-top: 10px;
   padding-top: 50px;
 }
+
 .carousel-container {
   display: flex;
   align-items: center;
@@ -31,33 +27,36 @@
   width: 100%;
   height: 100%;
 }
+
 /*Slides*/
 .carousel-slides-container {
   display: flex;
   height: 100%;
 }
+
 .carousel-slide {
   display: flex;
   flex-shrink: 0;
   width: 100%;
   box-sizing: border-box;
   transition: transform 1s ease;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 10px;
 }
+
 .carousel-slide a {
   display: block;
   width: calc(25% - 10px);
   height: 98%;
-  box-shadow: 0 0 20px  var(--black);
+  box-shadow: 0 0 20px var(--black);
 }
 
 .carousel-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
+
 .post {
   display: flex;
   flex-direction: column;
@@ -68,8 +67,8 @@
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 10px;
-  
 }
+
 .post h3 {
   position: absolute;
   bottom: 0;
@@ -82,6 +81,7 @@
   box-sizing: border-box;
   z-index: 1;
 }
+
 .post img {
   transition: transform 0.3s ease;
 }
@@ -104,12 +104,14 @@
   position: absolute;
   z-index: 1;
   opacity: 0.8;
-  transition: opacity 0.3s; 
+  transition: opacity 0.3s;
 }
+
 .arrow-btn:hover {
   color: var(--black);
   opacity: 1;
 }
+
 .prev-btn {
   left: calc(2% - 20px);
 }
@@ -117,16 +119,19 @@
 .next-btn {
   right: calc(2% - 20px);
 }
+
 .arrow-btn::before {
   content: "";
   display: inline-block;
-  font-family: 'Arial', sans-serif; 
+  font-family: "Arial", sans-serif;
 }
+
 .prev-btn::before {
-  content: "\00AB"; 
+  content: "\00AB";
 }
+
 .next-btn::before {
-  content: "\00BB"; 
+  content: "\00BB";
 }
 
 @media (max-width: 1024px) {

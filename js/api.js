@@ -1,7 +1,9 @@
 const baseUrl = "https://gamehub.olekristianfrontend.no/wp-json/wp/v2";
 
 async function getPosts(urlParameters = "") {
-  const response = await fetch(`${baseUrl}/posts?_embed&per_page=12${urlParameters}`);
+  const response = await fetch(
+    `${baseUrl}/posts?_embed&per_page=12${urlParameters}`
+  );
   const results = await response.json();
   return results;
 }
@@ -19,13 +21,13 @@ async function postComment(commentData) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(commentData),
-    credentials: "include", 
+    credentials: "include",
   });
 
   if (!response.ok) {
-    throw new Error('Network response was not ok');
+    throw new Error("Network response was not ok");
   }
-  
+
   const data = await response.json();
   return data;
 }
@@ -37,4 +39,3 @@ async function getCommentSection(postId) {
 }
 
 export { getPosts, getSpecificPost, postComment, getCommentSection };
-

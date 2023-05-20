@@ -1,65 +1,62 @@
-:root {
-    --black: #000000;
-    --green: #09ff00;
-    --boxshadow: #000000d5;
-    --white: #ffffff;
-    --inputbackground: #f0f0f0
-  }
 .contactform {
-    width: 70%;
-    max-width: 500px;
-    margin: auto;
-    margin-top: 100px;
-    background-color:var(--white);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px var(--boxshadow);
-    transition: box-shadow 0.3s ease;
+  width: 70%;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px var(--boxshadow);
+  transition: box-shadow 0.3s ease;
 }
 
 .contactform label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.contactform input, .contactform textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background-color: var(--inputbackground);
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-textarea{
-    height: 100px;
-}
-.contactform input:focus, .contactform textarea:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 5px var(--green);
+.contactform input,
+.contactform textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: var(--inputbackground);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+textarea {
+  height: 100px;
+}
+
+.contactform input:focus,
+.contactform textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 5px var(--green);
+}
 
 .contactform .button-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .form-button {
-    padding: 10px 50px;
-    margin-top: 20px;
+  padding: 10px 50px;
+  margin-top: 20px;
 }
 
 .form-button:hover {
-    box-shadow: 0 0 20px  var(--green);
-    background-color: var(--green);
-}
-.error {
-    display: none;
-    color: #ff0000;
-    margin-bottom: 10px;
+  box-shadow: 0 0 20px var(--green);
+  background-color: var(--green);
 }
 
+.error {
+  display: none;
+  color: #ff0000;
+  margin-bottom: 10px;
+}

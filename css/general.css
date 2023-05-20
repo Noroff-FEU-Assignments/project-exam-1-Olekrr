@@ -1,123 +1,157 @@
 :root {
-    --black: #000000;
-    --green: #09ff00;
-    --boxshadow: #000000d5;
-    --white: #ffffff;
-    --red: #ff0000;
-    --boxshadowred: #ff0000d5;
+  --black: #000000;
+  --green: #09ff00;
+  --boxshadow: #000000d5;
+  --white: #ffffff;
+  --red: #ff0000;
+  --boxshadowred: #ff0000d5;
+  --inputbackground: #f0f0f0;
 }
+
 @font-face {
-    font-family: Journeyman;
-    src: url(../assets/fonts/journeyman-line.otf);
-  }
+  font-family: Journeyman;
+  src: url(../assets/fonts/journeyman-line.otf);
+}
+
 @font-face {
-    font-family: Montserrat;
-    src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
+  font-family: Montserrat;
+  src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
+
 @font-face {
-    font-family: Roboto;
-    src: url(../assets/fonts/Roboto-Regular.ttf);
+  font-family: Roboto;
+  src: url(../assets/fonts/Roboto-Regular.ttf);
 }
-*{
-    margin: 0;
-    padding: 0;
+
+* {
+  margin: 0;
+  padding: 0;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-header{
-    position: sticky;
-    top: 0;
-    z-index: 3;
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
-a{
-    text-decoration: none;
+
+a {
+  text-decoration: none;
 }
-h1{
-    text-align: center;
-    margin-top: 60px;
+
+h1 {
+  text-align: center;
+  margin-top: 60px;
 }
-h1, h2, a, button{
-    font-family: Journeyman;
-}
-h3, h4{
-    font-family: Montserrat;
-}
-p, input, textarea{
-    font-family: Roboto;
-    line-height: 1.3;
-}
+
+h1,
+h2,
+a,
 button {
-    font-size: 1.5em;
-    color: var(--white);
-    background-color: var(--black);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 0 20px  var(--boxshadow);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease;
-  }
-  
+  font-family: Journeyman;
+}
+
+h3,
+h4 {
+  font-family: Montserrat;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+p,
+input,
+textarea {
+  font-family: Roboto;
+  line-height: 1.3;
+}
+
+button {
+  font-size: 1.5em;
+  color: var(--white);
+  background-color: var(--black);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 20px var(--boxshadow);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
 button:hover {
-    box-shadow: 0 0 20px  var(--green);
-    background-color: var(--green);
+  box-shadow: 0 0 20px var(--green);
+  background-color: var(--green);
 }
-  
-footer{
-    border-top: 5px solid var(--red);
-    height: 100px;
-    background: var(--black);
-    margin-top: auto;
+
+footer {
+  border-top: 5px solid var(--red);
+  height: 100px;
+  background: var(--black);
+  margin-top: auto;
 }
-.logo{
-    display: block;
-    margin: auto;
-    width: 350px;
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 350px;
 }
-.full-logo{
-    width: 60%;
-    display: block;
-    margin: auto;  
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-top: -30px;
+
+.full-logo {
+  width: 60%;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: -30px;
 }
+
 .sub-container a:hover h3,
 .carousel-slide a:hover h3,
 .content-container a:hover h3,
-li>a:hover,
-h3 >span:hover {
+li > a:hover,
+h3 > span:hover {
   color: var(--red);
-  
 }
+
 .sub-container a:hover,
 .carousel-slide a:hover,
 .content-container a:hover {
-  box-shadow: 0 0 20px  var(--boxshadowred);
+  box-shadow: 0 0 20px var(--boxshadowred);
 }
+
 .loader {
-    border: 16px solid #f3f3f3;
-    border-top: 16px solid #3498db;
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-@media (min-width: 500px) {
-    .full-logo{
-        width: 40%;
-    }
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
 }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 500px) {
+  .full-logo {
+    width: 40%;
+  }
+}
+
 @media (min-width: 1025px) {
-    .full-logo{
-        display: none;
-    }
-    
+  .full-logo {
+    display: none;
+  }
 }

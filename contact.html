@@ -1,51 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Ole Kristian Rasmussen">
-    <meta name="description" content="Meta corner contact page, containing a contact form and a frequently asked questions section">
+    <meta
+      name="description"
+      content="Meta corner contact page, containing a contact form and a frequently asked questions section">
     <title>Meta Corner | Contact</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/form.css">
     <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:3499521,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
-</head>
-<body class="homepage">
-  <header>
-    <nav class="nav">
-      <input class="checkbox" type="checkbox">
-      <span></span>
-      <span></span>
-      <span></span>
-      <div class="menu-container">
-        <a class="logo" href="index.html">
-        <img class="logo" src="/assets/images/logo1.png" alt="meta corner logo">
-        </a>
-        <ul class="menu">
-          <li><a class="navigation" href="index.html">Home</a></li>
-          <li><a class="navigation" href="bloglist.html">Blogs</a></li>
-          <li><a class="navigation" href="contact.html">Contact</a></li>
-          <li><a class="navigation" href="about.html">About</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3499521, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+  <body class="homepage">
+    <header>
+      <nav class="nav">
+        <input class="checkbox" type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu-container">
+          <a class="logo" href="index.html">
+            <img
+              class="logo"
+              src="/assets/images/logo1.png"
+              alt="meta corner logo"
+            />
+          </a>
+          <ul class="menu">
+            <li><a class="navigation" href="index.html">Home</a></li>
+            <li><a class="navigation" href="bloglist.html">Blogs</a></li>
+            <li><a class="navigation" href="contact.html">Contact</a></li>
+            <li><a class="navigation" href="about.html">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main>
-      <img class="full-logo" src="assets/images/logo3.png" alt="meta corner logo">
+      <img
+        class="full-logo"
+        src="assets/images/logo3.png"
+        alt="meta corner logo">
       <h1>Contact us!</h1>
       <form class="contactform">
         <div class="formsection">
-          
           <label>
             Name (min-characters: 6)
             <input name="name" id="name" placeholder="Name">
@@ -69,17 +82,21 @@
         <div>
           <label>
             Message (min-characters: 26)
-            <textarea name="message" id="message" placeholder="Message"></textarea>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Message"
+            ></textarea>
           </label>
           <div class="error" id="message-error">Message is too short</div>
         </div>
         <div class="button-container">
           <button class="form-button">Submit</button>
-      </div>
+        </div>
       </form>
     </main>
     <footer>
       <script src="/js/form.js"></script>
     </footer>
-</body>
+  </body>
 </html>
