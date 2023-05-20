@@ -10,8 +10,6 @@ const trendingUrlParameters = "&categories=21";
 
 async function getPosts(urlParameters, container, showImage = true) {
   const results = await getPostsFromApi(urlParameters);
-  console.log(results);
-
   // Create a new div to contain the posts
   let postContainer = document.createElement("div");
   postContainer.classList.add("post-container");

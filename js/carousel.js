@@ -4,7 +4,6 @@ const slideContainer = document.querySelector(".carousel-slides-container");
 
 async function getPosts() {
   const results = await getPostsFromApi();
-  console.log(results);
 
   let slide = document.createElement("div");
   slide.classList.add("carousel-slide");

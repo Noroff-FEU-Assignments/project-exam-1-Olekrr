@@ -22,7 +22,7 @@ textarea{
     justify-content: center;
 }
 button{
-    padding: 10px 50px;
+    padding: 10px 20px;
     margin: 20px 0;
 }
 h1{
@@ -98,7 +98,7 @@ h4{
     width: 100%;
     height: 40px;
     padding: 10px;
-    border: 2px solid #333333;
+    border: 2px solid var(--black);
     background-color: var(--white);
     border-radius: 10px;
     margin-bottom: 10px;
@@ -113,10 +113,10 @@ h4{
 
 .blog textarea, .comment-form textarea {
     width: 100%;
-    height: 100px; 
+    height: 80px; 
     padding: 10px;
-    border: 2px solid #333333;
-    background-color: #f0f0f0;
+    border: 2px solid var(--black);
+    background-color: var(--white);
     border-radius: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
@@ -133,20 +133,32 @@ h4{
 }
 
 .comment-form {
-    position: -webkit-sticky; /* For Safari */
+    position: -webkit-sticky;
     position: sticky;
     top: 105px;
 }
-.comments {
-    max-height: 600px;
-    overflow-y: auto; 
-  }
+
 .comment{
     width: 80%;
     margin: auto;
 }
+@media screen and (max-width: 1024px) {
+    .content {
+        width: 73%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .blog{
+        padding: 10px;
+    }
+    
+}
   
 @media screen and (min-width: 1024px) {
+    .comment-form{
+        max-height: 700px;
+        overflow-y: auto;
+    }
     .content {
         flex-direction: row;
         max-width: 1024px;
