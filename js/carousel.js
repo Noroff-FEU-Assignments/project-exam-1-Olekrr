@@ -1,6 +1,7 @@
 import { getPosts as getPostsFromApi } from './api.js';
 
 const slideContainer = document.querySelector(".carousel-slides-container");
+const loader = document.querySelector(".loader")
 
 async function getPosts() {
   const results = await getPostsFromApi();
@@ -11,6 +12,7 @@ async function getPosts() {
   for (let i = 0; i < results.length; i++) {
     const post = results[i];
     const featuredUrl = post._embedded['wp:featuredmedia'][0];
+    loader.style.display = "none";
     slide.innerHTML += `
     <a href="blogspecific.html?id=${post.id}">
       <div class="post">
