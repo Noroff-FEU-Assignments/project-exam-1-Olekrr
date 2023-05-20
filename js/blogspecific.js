@@ -1,4 +1,4 @@
-//imports necessary fetch functions from modularized API call doc.
+//Imports the neccessary functions from the API module
 import { getSpecificPost, postComment, getCommentSection } from "./api.js";
 
 //html references

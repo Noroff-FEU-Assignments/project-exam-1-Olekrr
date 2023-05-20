@@ -4,7 +4,7 @@ const baseUrl = "https://gamehub.olekristianfrontend.no/wp-json/wp/v2";
 //async function to fetch posts from the API.
 async function getPosts(urlParameters = "") { //optional parameters can be passed to add to the URL
   //fetch data from the endpoint, waits untill the request completes
-  const response = await fetch(`${baseUrl}/posts?_embed&per_page=12${urlParameters}`); //decided to use per_page12 for this project since we are only working with 12 posts.
+  const response = await fetch(`${baseUrl}/posts?_embed&per_page=12${urlParameters}`); //decided to use per_page12 for this project since i am only working with 12 posts.
   //parses the response data as JSON, waits until the data is parsed
   const results = await response.json();
   //returns parsed data

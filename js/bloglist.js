@@ -1,4 +1,4 @@
-//import fetch function from modularized API call doc.
+//Imports the neccessary function from the API module
 import { getPosts } from "./api.js";
 
 //var's for posts and filtered results
