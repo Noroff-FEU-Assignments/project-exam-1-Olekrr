@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ole Kristian Rasmussen">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ole Kristian Rasmussen" />
     <meta
       name="description"
-      content="Meta corner blog homepage, showing latest post in a content carousel, as well as sections containing news and reviews">
+      content="Meta corner blog homepage, showing latest post in a content carousel, as well as sections containing news and reviews"
+    />
     <title>Meta Corner | Home</title>
-    <link rel="stylesheet" href="/css/carousel.css">
-    <link rel="stylesheet" href="/css/homepagesections.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/carousel.css" />
+    <link rel="stylesheet" href="/css/homepagesections.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <script>
       (function (h, o, t, j, a, r) {
         h.hj =
@@ -31,7 +32,7 @@
   <body class="homepage">
     <header>
       <nav class="nav">
-        <input class="checkbox" type="checkbox">
+        <input class="checkbox" type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
@@ -57,19 +58,19 @@
       <img
         class="full-logo"
         src="assets/images/logo3.png"
-        alt="meta corner logo"
-      />
-      <h1>Latest Posts</h1>
+        alt="meta corner logo">
+      <h1 class="responsive-heading"><span>Welcome</span> <span>to the meta corner!</span></h1>
       <div class="carousel-outer-styling">
-        <button class="arrow-btn prev-btn"></button>
+        <h2 class="latest-posts-heading">Latest Posts</h2>
+        <button class="arrow-btn prev-btn" aria-label="Previous Slide"></button>
         <div class="carousel-wrapper">
           <div class="carousel-container">
-            <div class="carousel-slides-container">
+            <div class="carousel-slides-container" role="list">
               <div class="loader"></div>
             </div>
           </div>
         </div>
-        <button class="arrow-btn next-btn"></button>
+        <button class="arrow-btn next-btn" aria-label="Next Slide"></button>
       </div>
 
       <div class="sections-container">
@@ -97,6 +98,57 @@
       </div>
     </main>
     <footer>
+      <div class="footer-content">
+        <div class="footer-paragraph-container">
+          <h3>Who are we?</h3>
+          <p>
+            Welcome to 'The Meta Corner,' your go-to resource for all things
+            gaming. With a passionate team dedicated to providing insightful and
+            entertaining content, we aim to enhance your gaming experience and
+            keep you ahead of the curve. Join our community to explore game
+            mechanics, dissect strategies, and stay informed about the latest
+            trends. Whether you're a casual gamer or a seasoned professional,
+            we're here to fuel your gaming enthusiasm. Game on!
+          </p>
+        </div>
+        <div class="footer-links-wrapper">
+          <h3>Links</h3>
+          <div class="footer-links-container">
+            <a class="footer-link" href="index.html">Home</a>
+            <a class="footer-link" href="bloglist.html">Blogs</a>
+            <a class="footer-link" href="contact.html">Contact</a>
+            <a class="footer-link" href="about.html">About</a>
+          </div>
+        </div>
+        <div>
+          <h3>Contact information</h3>
+          <a class="footer-link" href="contact.html">Visit the Contact Page</a>
+          <p>Email: example@email.com</p>
+          <h4>Follow us on social media!</h4>
+          <div class="footer-social-media">
+            <img
+              class="socialmedialogo"
+              src="assets/images/snapchat.png"
+              alt="Snapchat icon"
+            />
+            <img
+              class="socialmedialogo"
+              src="assets/images/instagram.png"
+              alt="Instagram icon"
+            />
+            <img
+              class="socialmedialogo"
+              src="assets/images/twitter.png"
+              alt="Twitter icon"
+            />
+            <img
+              class="socialmedialogo"
+              src="assets/images/facebook.png"
+              alt="Facebook icon"
+            />
+          </div>
+        </div>
+      </div>
       <script type="module" src="js/carousel.js"></script>
       <script type="module" src="js/homepagesections.js"></script>
     </footer>

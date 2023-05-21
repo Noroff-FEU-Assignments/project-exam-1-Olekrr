@@ -159,6 +159,10 @@ body {
   .news-post-container .post-container {
     grid-template-columns: 1fr;
   }
+  .reviews-container,
+  .news-container{
+    margin-top: 30px;
+  }
 
   .reviews-post-container a,
   .news-post-container a {

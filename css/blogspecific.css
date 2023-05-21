@@ -44,7 +44,14 @@ h4 {
 .blog p {
   margin-top: 10px;
 }
-
+.blog li{
+  font-family: roboto;
+}
+.blog ul{
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
 .modal {
   display: none;
   position: fixed;

@@ -36,21 +36,21 @@ async function getPosts(urlParameters, container, loader, showImage = true) {
       imgHtml = `<img class="post-image" src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">`;
       postHtml = `
         <a href="blogspecific.html?id=${post.id}" class="sectionpost">
-          <div class="post-item">
+          <article class="post-item">
             <h3>${post.title.rendered}</h3>
             ${imgHtml}
-          </div>
+          </article>
         </a>
       `;
     // If showImage parameter is false, display the post without its image (just the title)
     } else {
       loader.style.display = "none";
       postHtml = `
-        <div class="sectionpost trending-post">
+        <article class="sectionpost trending-post">
           <a href="blogspecific.html?id=${post.id}">
             <h3>${post.title.rendered}</h3>
           </a>
-        </div>
+        </article>
       `;
     }
 

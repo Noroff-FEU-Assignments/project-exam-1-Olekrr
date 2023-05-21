@@ -1,16 +1,30 @@
+.latest-posts-heading{
+  position: relative;
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+}
 /*Main carousel container*/
 .carousel-outer-styling {
   position: relative;
   width: 100%;
   height: 400px;
-  background-image: url(/assets/images/carouselbackground.jpg);
+  background-image: url(/assets/images/carouselbackground3.jpg);
   background-attachment: fixed;
   background-size: cover;
   margin-top: 50px;
   border-top: 5px solid var(--black);
   border-bottom: 5px solid var(--black);
 }
-
+.latest-posts-heading{
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--white);
+  font-size: 40px;
+  background-color: var(--boxshadow);
+}
 .carousel-wrapper {
   overflow: hidden;
   height: 300px;

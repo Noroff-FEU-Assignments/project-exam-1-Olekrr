@@ -21,10 +21,10 @@ async function getPosts() {
     //add html to the slide
     slide.innerHTML += ` 
     <a href="blogspecific.html?id=${post.id}">
-      <div class="post">
-        <h3><span>${post.title.rendered}</span></h3>
+      <article class="post" role="listitem" aria-live="polite">
+        <h3><span aria-hidden="true">${post.title.rendered}</span></h3>
         <img src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">
-      </div>
+      </article>
       </a>
     `;
 
