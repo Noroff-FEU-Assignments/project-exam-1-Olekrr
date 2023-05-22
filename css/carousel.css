@@ -12,8 +12,8 @@
   background-image: url(/assets/images/carouselbackground3.jpg);
   background-attachment: fixed;
   background-size: cover;
-  margin-top: 50px;
-  border-top: 5px solid var(--black);
+  margin-top: 70px;
+  border-top: 5px solid var(--red);
   border-bottom: 5px solid var(--black);
 }
 .latest-posts-heading{
