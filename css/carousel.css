@@ -1,3 +1,4 @@
+/*Contains styles for the homepage content carousel*/
 .latest-posts-heading{
   position: relative;
   color: var(--white);
@@ -15,6 +16,11 @@
   margin-top: 70px;
   border-top: 5px solid var(--red);
   border-bottom: 5px solid var(--black);
+}
+.carousel-loader{
+  width: 100%;
+  margin: auto;
+  margin-top: 140px;
 }
 .latest-posts-heading{
   position: absolute;
@@ -104,7 +110,7 @@
   transform: scale(1.05);
 }
 
-/*Buttons*/
+/*arrow buttons*/
 .arrow-btn {
   position: absolute;
   top: 50%;
@@ -148,6 +154,7 @@
   content: "\00BB";
 }
 
+/*Hides carousel on mobile for a simpler view*/
 @media (max-width: 1024px) {
   .carousel-outer-styling {
     display: none;

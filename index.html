@@ -28,7 +28,8 @@
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
   </head>
-  <body class="homepage">
+  <body>
+    <!--Header contains navigation-->
     <header>
       <nav class="nav">
         <input class="checkbox" type="checkbox">
@@ -53,6 +54,7 @@
     </header>
 
     <main>
+      <!--Main site content-->
       <img
         class="full-logo"
         src="assets/images/logo3.png"
@@ -60,19 +62,20 @@
       <h1 class="responsive-heading">
         <span>Welcome</span> <span>to the meta corner!</span>
       </h1>
+      <!--Carousel structure-->
       <div class="carousel-outer-styling">
         <h2 class="latest-posts-heading">Latest Posts</h2>
+        <div class="loader carousel-loader"></div>
         <button class="arrow-btn prev-btn" aria-label="Previous Slide"></button>
         <div class="carousel-wrapper">
           <div class="carousel-container">
             <div class="carousel-slides-container" role="list">
-              <div class="loader"></div>
             </div>
           </div>
         </div>
         <button class="arrow-btn next-btn" aria-label="Next Slide"></button>
       </div>
-
+      <!--Home page sections for news, reviews and trending-->
       <div class="sections-container">
         <div class="grid-sections">
           <section class="reviews-container sub-container">
@@ -98,6 +101,7 @@
       </div>
     </main>
     <footer>
+      <!--footer content-->
       <div class="footer-content">
         <div class="footer-paragraph-container">
           <h3>Who are we?</h3>

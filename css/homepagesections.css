@@ -1,17 +1,12 @@
 h3 {
   font-size: 3vw;
 }
-
 body {
   box-sizing: border-box;
 }
-
-
-
 .grid-sections {
   margin-bottom: 50px;
 }
-
 .reviews-post-container a,
 .news-post-container a {
   position: relative;

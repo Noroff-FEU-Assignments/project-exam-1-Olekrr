@@ -1,3 +1,5 @@
+/*Contains styling for the blog list page.
+filter, blog section, view more button*/
 body {
   box-sizing: border-box;
 }
@@ -5,6 +7,11 @@ body {
 h2 {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.bloglist-loader{
+  width: 100%;
+  margin: auto;
 }
 
 .filter-container {

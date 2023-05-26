@@ -1,3 +1,4 @@
+/*Contains styling for contact form on the contact page*/
 .contactform {
   width: 70%;
   max-width: 500px;
@@ -55,8 +56,16 @@ textarea {
   background-color: var(--green);
 }
 
+/*Hidden success and error messages, displayed based on form validation*/
+.success {
+  display: none;
+  color: var(--green); 
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+}
 .error {
   display: none;
-  color: #ff0000;
+  color: var(--red);
   margin-bottom: 10px;
 }

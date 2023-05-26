@@ -8,6 +8,7 @@ const email = document.querySelector("#email");
 const emailError = document.querySelector("#email-error");
 const message = document.querySelector("#message");
 const messageError = document.querySelector("#message-error");
+const formSuccess = document.querySelector("#form-success");
 
 // This function checks if a string has more characters than a certain number (len)
 function length(value, len) {
@@ -93,7 +94,7 @@ function validateForm(event) {
         subject.value = "";
         email.value = "";
         message.value = "";
-        alert("Form submitted successfully"); // Show an alert indicating successful submission
+        formSuccess.style.display = "block"; // Show success message on successful submission
       })
       .catch((error) => {
         console.error("Error:", error);

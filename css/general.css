@@ -1,7 +1,8 @@
+/*Contains general styles repeated over several pages*/
 :root {
   --black: #000000;
   --boxshadow: #000000d5;
-  --green: #09ff00;
+  --green: #008000;
   --white: #ffffff;
   --inputbackground: #f0f0f0;
   --loadergrey: #f3f3f3;
@@ -36,13 +37,16 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
 a {
   text-decoration: none;
 }
+
 .responsive-heading {
   display: grid;
   grid-template-columns: 1fr;
 }
+
 h1 {
   text-align: center;
   margin-top: 60px;
@@ -156,7 +160,6 @@ h3 > span:hover,
   list-style: none;
 }
 .loader {
-  position: absolute;
   border: 16px solid var(--loadergrey);
   border-top: 16px solid var(--loaderblue);
   border-radius: 50%;

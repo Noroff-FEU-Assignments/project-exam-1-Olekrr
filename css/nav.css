@@ -1,3 +1,4 @@
+/*Stylesheet for nav menu*/
 .menu {
   background: var(--black);
 }
@@ -9,6 +10,9 @@
   top: 15px;
 }
 
+/*Styling for hamburger menu for mobile and pad, hidden checkbox covered by decorated span's.
+Simple transforms to hide menu off screen to the left. 
+When checkbox is checked, resets transform on the menu container to restore original position, and rotates span's 45 degrees to form a cross*/
 @media screen and (max-width: 1024px) {
   .logo {
     margin-top: 10px;
@@ -109,7 +113,7 @@
     transform: none;
   }
 }
-
+/*Changes to logo size for different viewports for a more natural size*/
 @media screen and (max-width: 500px) {
   .logo {
     width: 200px;
@@ -124,6 +128,7 @@
   }
 }
 
+/*For laptops and desktops, hides checkbox to show normal list - restyled to a normal top bar menu*/
 @media screen and (min-width: 1025px) {
   .checkbox {
     display: none;
@@ -137,7 +142,8 @@
     border-bottom: 5px solid var(--red);
   }
 
-  .menu-container {
+  .menu-container,
+  .menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,10 +151,6 @@
   }
 
   .menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     background: none;
   }
 

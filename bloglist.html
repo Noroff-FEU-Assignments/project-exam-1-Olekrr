@@ -9,8 +9,8 @@
       name="description"
       content="Meta corner blog overview. Contains listings of all blog posts as well as a way to filter through them">
     <title>Meta Corner | Blogs</title>
-    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/bloglist.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <script>
       (function(h,o,t,j,a,r){
           h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
@@ -24,6 +24,7 @@
   </head>
   <body class="homepage">
     <header>
+      <!--Navigation structure-->
       <nav class="nav">
         <input class="checkbox" type="checkbox">
         <span></span>
@@ -48,8 +49,10 @@
         src="assets/images/logo3.png"
         alt="meta corner logo">
       <h1 class="responsive-heading"><span>Welcome</span> <span>to our blog!</span></h1>
+      <!--Blogsite content structure-->
       <div class="content-wrapper">
         <div class="grid-container">
+          <!--Interactive filter-->
           <div class="filter-container">
             <h2>Filter</h2>
           <select id="filter-dropdown">
@@ -60,14 +63,16 @@
             <option value="date new">Date new > old</option>
           </select>
         </div>
+        <!--Content grid container-->
         <div class="content-container">
-          <div class="loader"></div>>
+          <div class="loader bloglist-loader"></div>
         </div>
         <button id="view-more" class="view-more-button">View more</button>
       </div>
     </div>
     </main>
     <footer>
+      <!--Footer Structure-->
       <div class="footer-content">
         <div class="footer-paragraph-container">
           <h3>Who are we?</h3>

@@ -25,7 +25,7 @@ async function getPosts() {
         <h3><span aria-hidden="true">${post.title.rendered}</span></h3>
         <img src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">
       </article>
-      </a>
+    </a>
     `;
 
     // If the current post is the 4th post in the slide or the last post in the results,
@@ -68,21 +68,21 @@ function initCarousel() {
   //function to show previous slides
   function prevSlide() {
     slideIndex = (slideIndex - 1 + slides.length) % slides.length; // Decrease the slide index by 1, wrapping around to the end of the list if necessary
-    showSlide(slideIndex); // Call the 'showSlide' function to update the display
+    showSlide(slideIndex); // Call the "showSlide" function to update the display
   }
 
   //function to show next slide
   function nextSlide() { 
     slideIndex = (slideIndex + 1) % slides.length; // Increase the slide index by 1, wrapping around to the start of the list if necessary
-    showSlide(slideIndex); // Call the 'showSlide' function to update the display
+    showSlide(slideIndex); // Call the "showSlide" function to update the display
   }
 
   // Display the first slide when the carousel is initialized
   showSlide(slideIndex);
 
   // Event listeners to the previous and next buttons.
-  // When the previous button is clicked, the 'prevSlide' function will be called.
-  // When the next button is clicked, the 'nextSlide' function will be called.
+  // When the previous button is clicked, the "prevSlide" function will be called.
+  // When the next button is clicked, the "nextSlide" function will be called.
   document.querySelector(".prev-btn").addEventListener("click", prevSlide);
   document.querySelector(".next-btn").addEventListener("click", nextSlide);
 }
