@@ -12,15 +12,20 @@
     <link rel="stylesheet" href="/css/bloglist.css">
     <link rel="stylesheet" href="/css/styles.css">
     <script>
-      (function(h,o,t,j,a,r){
-          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-          h._hjSettings={hjid:3499521,hjsv:6};
-          a=o.getElementsByTagName('head')[0];
-          r=o.createElement('script');r.async=1;
-          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-          a.appendChild(r);
-      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3499521, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
   </head>
   <body class="homepage">
     <header>
@@ -32,7 +37,10 @@
         <span></span>
         <div class="menu-container">
           <a class="logo" href="index.html">
-          <img class="logo" src="/assets/images/logo1.png" alt="meta corner logo">
+            <img
+              class="logo"
+              src="/assets/images/logo1.png"
+              alt="meta corner logo">
           </a>
           <ul class="menu">
             <li><a class="navigation" href="index.html">Home</a></li>
@@ -48,28 +56,30 @@
         class="full-logo"
         src="assets/images/logo3.png"
         alt="meta corner logo">
-      <h1 class="responsive-heading"><span>Welcome</span> <span>to our blog!</span></h1>
+      <h1 class="responsive-heading">
+        <span>Welcome</span> <span>to our blog!</span>
+      </h1>
       <!--Blogsite content structure-->
       <div class="content-wrapper">
         <div class="grid-container">
           <!--Interactive filter-->
           <div class="filter-container">
             <h2>Filter</h2>
-          <select id="filter-dropdown">
-            <option value="all">All</option>
-            <option value="review">Review</option>
-            <option value="news">News</option>
-            <option value="date old">Date old > new</option>
-            <option value="date new">Date new > old</option>
-          </select>
+            <select id="filter-dropdown">
+              <option value="all">All</option>
+              <option value="review">Review</option>
+              <option value="news">News</option>
+              <option value="date old">Date old > new</option>
+              <option value="date new">Date new > old</option>
+            </select>
+          </div>
+          <!--Content grid container-->
+          <div class="content-container">
+            <div class="loader bloglist-loader"></div>
+          </div>
+          <button id="view-more" class="view-more-button">View more</button>
         </div>
-        <!--Content grid container-->
-        <div class="content-container">
-          <div class="loader bloglist-loader"></div>
-        </div>
-        <button id="view-more" class="view-more-button">View more</button>
       </div>
-    </div>
     </main>
     <footer>
       <!--Footer Structure-->
