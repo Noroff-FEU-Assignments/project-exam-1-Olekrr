@@ -45,6 +45,9 @@ section {
   width: 150px;
   border-radius: 50%;
 }
+hr{
+    margin-top: 20px;
+}
 
 @media screen and (max-width: 1023px) {
     .content-wrapper {
@@ -59,4 +62,3 @@ section {
     }
     
   }
-  
