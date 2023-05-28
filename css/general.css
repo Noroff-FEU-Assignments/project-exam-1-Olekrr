@@ -94,7 +94,7 @@ button {
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-button:hover {
+.submit-button:hover {
   box-shadow: 0 0 20px var(--green);
   background-color: var(--green);
 }

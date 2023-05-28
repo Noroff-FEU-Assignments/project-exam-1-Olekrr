@@ -1,5 +1,5 @@
 // Import the necessary function from the API module
-import { getPosts as getPostsFromApi } from "./api.js";
+import { getPosts } from "./api.js";
 
 // Get the DOM elements for the containers where the posts will be displayed
 const reviewsContainer = document.querySelector(".reviews-post-container");
@@ -17,8 +17,8 @@ const newsUrlParameters = "&categories=20";
 const trendingUrlParameters = "&categories=21";
 
 // A general-purpose function to fetch posts for a given category and display them in a given container
-async function getPosts(urlParameters, container, loader, showImage = true) {
-  const results = await getPostsFromApi(urlParameters);
+async function createSections(urlParameters, container, loader, showImage = true) {
+  const results = await getPosts(urlParameters);
 
   // Create a new container for these posts
   let postContainer = document.createElement("div");
@@ -42,7 +42,7 @@ async function getPosts(urlParameters, container, loader, showImage = true) {
           </article>
         </a>
       `;
-    // If showImage parameter is false, display the post without its image (just the title)
+    // If showImage parameter is false, display the post without its image
     } else {
       loader.style.display = "none";
       postHtml = `
@@ -64,6 +64,6 @@ async function getPosts(urlParameters, container, loader, showImage = true) {
 }
 
 // Fetch and display posts for each category
-getPosts(reviewsUrlParameters, reviewsContainer, reviewsLoader);
-getPosts(newsUrlParameters, newsContainer, newsLoader);
-getPosts(trendingUrlParameters, trendingContainer, trendingLoader, false);
+createSections(reviewsUrlParameters, reviewsContainer, reviewsLoader);
+createSections(newsUrlParameters, newsContainer, newsLoader);
+createSections(trendingUrlParameters, trendingContainer, trendingLoader, false);

@@ -1,13 +1,13 @@
 //Imports the neccessary function from the API module
-import { getPosts as getPostsFromApi } from "./api.js";
+import { getPosts } from "./api.js";
 
 //html references
 const slideContainer = document.querySelector(".carousel-slides-container");
 const loader = document.querySelector(".loader");
 
-//function for getting the posts
-async function getPosts() {
-  const results = await getPostsFromApi();
+//function for creating slides
+async function createSlides() {
+  const results = await getPosts();
 
   //creates new html div element for slides and gives it a class
   let slide = document.createElement("div");
@@ -44,8 +44,8 @@ async function getPosts() {
   initCarousel();
 }
 
-//calls getPosts function to fetch and display posts
-getPosts();
+//calls createSlides function to fetch posts, create and display slides.
+createSlides();
 
 
 //Carousel function
@@ -61,7 +61,7 @@ function initCarousel() {
     for (let i = 0; i < slides.length; i++) {
 
       // Use the CSS transform property to move each slide to the left by a distance equal to the index multiplied by 100%.
-      // This effectively moves the slide at the specified index into view, and moves all other slides out of view.
+      // This effectively moves the slide at the specified index into view, and moves previous slides out of view.
       slides[i].style.transform = `translateX(-${index * 100}%)`;
     }
   }
