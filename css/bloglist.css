@@ -13,7 +13,17 @@ h2 {
   width: 100%;
   margin: auto;
 }
-
+label[for="filter-dropdown"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 .filter-container {
   align-self: center;
   border-radius: 10px;
