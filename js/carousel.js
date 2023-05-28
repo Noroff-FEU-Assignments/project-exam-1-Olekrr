@@ -12,7 +12,8 @@ async function createSlides() {
   //creates new html div element for slides and gives it a class
   let slide = document.createElement("div");
   slide.classList.add("carousel-slide");
-  slide.setAttribute("role", "list");
+  slide.setAttribute("role", "group");
+  slide.setAttribute("aria-label", "Slide" + (i+1));
 
   //loop through the fetched results
   for (let i = 0; i < results.length; i++) {
@@ -66,7 +67,6 @@ function initCarousel() {
       slides[i].style.transform = `translateX(-${index * 100}%)`;
 
       // If the slide is the currently displayed slide, set aria-selected="true". Otherwise, set aria-selected="false".
-      slides[i].setAttribute("aria-selected", i === index ? "true" : "false");
     }
   }
   //function to show previous slides
