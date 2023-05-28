@@ -129,7 +129,7 @@ When checkbox is checked, resets transform on the menu container to restore orig
 
 /*For laptops and desktops, hides checkbox to show normal list - restyled to a normal top bar menu*/
 @media screen and (min-width: 1025px) {
-  .checkbox {
+  .hamburger-btn {
     display: none;
   }
 
