@@ -22,7 +22,7 @@ async function createSlides() {
     loader.style.display = "none"; //hide loader
     //add html to the slide
     slide.innerHTML += ` 
-    <a href="blogspecific.html?id=${post.id}" role="listitem" aria-live="polite">
+    <a href="blogspecific.html?id=${post.id}">
       <article class="post">
         <h3><span aria-hidden="true">${post.title.rendered}</span></h3>
         <img src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">
