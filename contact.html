@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Ole Kristian Rasmussen">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ole Kristian Rasmussen" />
     <meta
       name="description"
-      content="Meta corner contact page, containing a contact form and a frequently asked questions section">
+      content="Meta corner contact page, containing a contact form and a frequently asked questions section"
+    />
     <title>Meta Corner | Contact</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
     <script>
       (function (h, o, t, j, a, r) {
         h.hj =
@@ -40,7 +41,8 @@
             <img
               class="logo"
               src="/assets/images/logo1.png"
-              alt="meta corner logo">
+              alt="meta corner logo"
+            />
           </a>
           <ul class="menu">
             <li><a class="navigation" href="index.html">Home</a></li>
@@ -55,49 +57,90 @@
       <img
         class="full-logo"
         src="assets/images/logo3.png"
-        alt="meta corner logo">
+        alt="meta corner logo"
+      />
       <h1>Contact us!</h1>
       <!--Contact form structure-->
-      <form class="contactform">
-        <div class="formsection">
-          <label>
-            Name (min-characters: 6)
-            <input name="name" id="name" placeholder="Name">
-          </label>
-          <div class="error" id="name-error">Please enter name</div>
-        </div>
-        <div>
-          <label>
-            Subject (min-characters: 16)
-            <input name="subject" id="subject" placeholder="Subject">
-          </label>
-          <div class="error" id="subject-error">Subject is too short</div>
-        </div>
-        <div>
-          <label>
-            Email (example@email.com)
-            <input name="email" id="email" placeholder="Example@email.com">
-          </label>
-          <div class="error" id="email-error">Please enter a valid email</div>
-        </div>
-        <div>
-          <label>
-            Message (min-characters: 26)
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Message"
-            ></textarea>
-          </label>
-          <div class="error" id="message-error">Message is too short</div>
-        </div>
-        <div class="button-container">
-          <button class="form-button submit-button">Submit</button>
-        </div>
-        <div>
-          <div class="success" id="form-success">Your message was submitted successfully.</div>
-        </div>
-      </form>
+      <div class="contact-content-wrapper">
+        <form class="contactform">
+          <h2>Send us a message!</h2>
+          <div class="formsection">
+            <label>
+              Name (min-characters: 6)
+              <input name="name" id="name" placeholder="Name" />
+            </label>
+            <div class="error" id="name-error">Please enter name</div>
+          </div>
+          <div>
+            <label>
+              Subject (min-characters: 16)
+              <input name="subject" id="subject" placeholder="Subject" />
+            </label>
+            <div class="error" id="subject-error">Subject is too short</div>
+          </div>
+          <div>
+            <label>
+              Email (example@email.com)
+              <input name="email" id="email" placeholder="Example@email.com" />
+            </label>
+            <div class="error" id="email-error">Please enter a valid email</div>
+          </div>
+          <div>
+            <label>
+              Message (min-characters: 26)
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Message"
+              ></textarea>
+            </label>
+            <div class="error" id="message-error">Message is too short</div>
+          </div>
+          <div class="button-container">
+            <button class="form-button submit-button">Submit</button>
+          </div>
+          <div>
+            <div class="success" id="form-success">
+              Your message was submitted successfully.
+            </div>
+          </div>
+        </form>
+        <section class="social-media-section">
+          <h2>Get in touch on social media!</h2>
+          <div class="social-media-element">
+            <img
+              class="socialmedialogo"
+              src="assets/images/snapchat.png"
+              alt="Snapchat icon"
+            />
+            <p>Follow us on snapchat</p>
+          </div>
+          <div>
+            <img
+              class="socialmedialogo"
+              src="assets/images/instagram.png"
+              alt="Instagram icon"
+            />
+            <p>Check out our instagram</p>
+          </div>
+          <div>
+            <img
+              class="socialmedialogo"
+              src="assets/images/twitter.png"
+              alt="Twitter icon"
+            />
+            <p>Get updates through twitter</p>
+          </div>
+          <div>
+            <img
+              class="socialmedialogo"
+              src="assets/images/facebook.png"
+              alt="Facebook icon"
+            />
+            <p>Stay connected through our facebook</p>
+          </div>
+        </section>
+      </div>
     </main>
     <footer>
       <!--Footer structure-->
@@ -143,24 +186,28 @@
             <img
               class="socialmedialogo"
               src="assets/images/snapchat.png"
-              alt="Snapchat icon">
+              alt="Snapchat icon"
+            />
             <img
               class="socialmedialogo"
               src="assets/images/instagram.png"
-              alt="Instagram icon">
+              alt="Instagram icon"
+            />
             <img
               class="socialmedialogo"
               src="assets/images/twitter.png"
-              alt="Twitter icon">
+              alt="Twitter icon"
+            />
             <img
               class="socialmedialogo"
               src="assets/images/facebook.png"
-              alt="Facebook icon">
+              alt="Facebook icon"
+            />
           </div>
         </div>
       </div>
     </footer>
-    <script src="/js/form.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/nav.js"></script>
   </body>
 </html>

@@ -1,8 +1,19 @@
 /*Contains styling for contact form on the contact page*/
+form > h2 {
+  margin-bottom: 15px;
+  transform: translateX(-4px);
+}
+form > h2,
+section > h2 {
+  font-size: 30px;
+}
+.contact-content-wrapper {
+  display: flex;
+  justify-content: center;
+}
 .contactform {
   width: 70%;
   max-width: 500px;
-  margin: auto;
   margin-top: 50px;
   margin-bottom: 100px;
   background-color: var(--white);
@@ -59,7 +70,7 @@ textarea {
 /*Hidden success and error messages, displayed based on form validation*/
 .success {
   display: none;
-  color: var(--green); 
+  color: var(--green);
   text-align: center;
   margin-top: 20px;
   font-size: 30px;
@@ -68,4 +79,54 @@ textarea {
   display: none;
   color: var(--red);
   margin-bottom: 10px;
+}
+.social-media-section {
+  width: 70%;
+  max-width: 500px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px var(--boxshadow);
+  transition: box-shadow 0.3s ease;
+  margin-left: 30px;
+}
+
+.socialmedialogo {
+  width: 60px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.socialmedialogo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px var(--green);
+}
+
+.social-media-section > div {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.social-media-section > div > p {
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 1023px) {
+  .contact-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactform,
+  .social-media-section {
+    margin-right: 0;
+    margin-left: 0;
+    max-width: 90%; /* You can adjust this to provide some side spacing */
+  }
 }
