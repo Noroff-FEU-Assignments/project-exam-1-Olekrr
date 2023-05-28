@@ -12,6 +12,7 @@ async function createSlides() {
   //creates new html div element for slides and gives it a class
   let slide = document.createElement("div");
   slide.classList.add("carousel-slide");
+  slide.setAttribute("role", "list");
 
   //loop through the fetched results
   for (let i = 0; i < results.length; i++) {
@@ -20,8 +21,8 @@ async function createSlides() {
     loader.style.display = "none"; //hide loader
     //add html to the slide
     slide.innerHTML += ` 
-    <a href="blogspecific.html?id=${post.id}">
-      <article class="post" role="listitem" aria-live="polite">
+    <a href="blogspecific.html?id=${post.id}" role="listitem" aria-live="polite">
+      <article class="post">
         <h3><span aria-hidden="true">${post.title.rendered}</span></h3>
         <img src="${featuredUrl.source_url}" alt="${featuredUrl.alt_text}">
       </article>
@@ -63,6 +64,9 @@ function initCarousel() {
       // Use the CSS transform property to move each slide to the left by a distance equal to the index multiplied by 100%.
       // This effectively moves the slide at the specified index into view, and moves previous slides out of view.
       slides[i].style.transform = `translateX(-${index * 100}%)`;
+
+      // If the slide is the currently displayed slide, set aria-selected="true". Otherwise, set aria-selected="false".
+      slides[i].setAttribute("aria-selected", i === index ? "true" : "false");
     }
   }
   //function to show previous slides
