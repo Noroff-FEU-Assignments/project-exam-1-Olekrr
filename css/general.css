@@ -1,4 +1,4 @@
-/*Contains general styles repeated over several pages*/
+/*Contains general styles repeated over several pages, specifically shadowing, fonts, footer, hover effects etc.*/
 :root {
   --black: #000000;
   --boxshadow: #000000d5;

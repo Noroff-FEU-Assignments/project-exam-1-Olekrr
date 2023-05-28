@@ -80,6 +80,8 @@ textarea {
   color: var(--red);
   margin-bottom: 10px;
 }
+
+/*Social media section*/
 .social-media-section {
   width: 70%;
   max-width: 500px;
@@ -116,7 +118,7 @@ textarea {
   margin-left: 10px;
   font-size: 18px;
 }
-
+/*Adjustments for mobile*/
 @media (max-width: 1023px) {
   .contact-content-wrapper {
     flex-direction: column;

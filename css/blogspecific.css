@@ -54,6 +54,7 @@ h4 {
   margin: auto;
   margin-top: 10px;
 }
+/*Modal styling*/
 .modal {
   display: none;
   position: fixed;
@@ -95,7 +96,7 @@ h4 {
     transform: scale(1);
   }
 }
-
+/*Comment section*/
 .blog,
 .comment-form,
 .comments .comment {
@@ -164,6 +165,7 @@ h4 {
   margin: auto;
 }
 
+/*comment form validation error/success messages*/
 .error{
   margin-bottom: 10px;
   display: none;

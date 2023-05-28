@@ -49,7 +49,12 @@ body {
   width: 70%;
   margin: auto;
 }
-
+.reviews-post-container .post-container,
+.news-post-container .post-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 .reviews-post-container a:hover img,
 .news-post-container a:hover img {
   transform: scale(1.05);
@@ -80,6 +85,8 @@ body {
   transition: box-shadow 0.3s ease;
   padding: 20px;
 }
+
+/*Adjustments for responsiveness over different viewports*/
 
 @media screen and (min-width: 762px) {
   .reviews-post-container a,
@@ -142,13 +149,6 @@ body {
   h3 {
     font-size: 14px;
   }
-}
-
-.reviews-post-container .post-container,
-.news-post-container .post-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
 }
 
 @media screen and (max-width: 1024px) {

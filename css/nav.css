@@ -9,9 +9,9 @@
   top: 15px;
 }
 
-/*Styling for hamburger menu for mobile and pad, hidden checkbox covered by decorated span's.
+/*Styling for hamburger menu for mobile and pad, hidden button covered by decorated span's.
 Simple transforms to hide menu off screen to the left. 
-When checkbox is checked, resets transform on the menu container to restore original position, and rotates span's 45 degrees to form a cross*/
+When button is checked, resets transform on the menu container to restore original position, and rotates span's 45 degrees to form a cross*/
 @media screen and (max-width: 1024px) {
   .logo {
     margin-top: 10px;
