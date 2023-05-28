@@ -26,7 +26,7 @@ When checkbox is checked, resets transform on the menu container to restore orig
   }
 
   .nav,
-  .nav > input {
+  .hamburger-btn {
     display: block;
   }
 
@@ -43,7 +43,7 @@ When checkbox is checked, resets transform on the menu container to restore orig
     color: var(--white);
   }
 
-  .nav > input {
+  .hamburger-btn {
     width: 32px;
     height: 32px;
     position: absolute;
@@ -73,17 +73,17 @@ When checkbox is checked, resets transform on the menu container to restore orig
     transform-origin: 0% 100%;
   }
 
-  .nav > input:checked ~ span {
+  .hamburger-btn.active ~ span {
     background: var(--white);
     opacity: 1;
     transform: rotate(45deg);
   }
 
-  .nav > input:checked ~ span:nth-last-child(3) {
+  .hamburger-btn.active ~ span:nth-last-child(3) {
     opacity: 0;
   }
 
-  .nav > input:checked ~ span:nth-last-child(2) {
+  .hamburger-btn.active ~ span:nth-last-child(2) {
     transform: rotate(-45deg);
   }
 
@@ -108,7 +108,7 @@ When checkbox is checked, resets transform on the menu container to restore orig
     text-align: center;
   }
 
-  .nav > input:checked ~ .menu-container {
+  .hamburger-btn.active ~ .menu-container {
     transform: none;
   }
 }
