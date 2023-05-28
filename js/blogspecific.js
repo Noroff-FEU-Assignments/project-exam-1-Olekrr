@@ -1,7 +1,7 @@
-//Imports the neccessary functions from the API module
+//Importing necessary functions from the api.js module
 import { getSpecificPost, postComment, getCommentSection } from "./api.js";
 
-//html references
+//selecting DOM elements for later manipulation
 const container = document.querySelector(".blog");
 const title = document.querySelector(".title");
 
@@ -10,35 +10,38 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-
+// Function to display specific post content using the post id
 async function displaySpecificPost() {
-  const post = await getSpecificPost(id); // fetches specific post using imported function and extracted ID
-  title.innerHTML = `Meta Corner | ${post.title.rendered}`; //changes the pages title to the posts title
-  
-  //updates the blog container with the posts title and content
+  const post = await getSpecificPost(id);
+  title.innerHTML = `Meta Corner | ${post.title.rendered}`;
+
   container.innerHTML = `
   <h1>${post.title.rendered}</h1>
   <div>${post.content.rendered}</div>
   `;
-  displayImagesInModal(); //calling modal function to handle image click events and show them in a modal
-  await displayComments(id); //calling comment function to fetch and display the specific posts comments
+
+  // After the post is displayed, we prepare the images for the modal view 
+  // and display the comments for this post.
+  displayImagesInModal();
+  await displayComments(id);
 }
 
+// This function adds an event listener to every image in the post.
+// Clicking an image will display it in a modal view.
 let modal = document.getElementById("myModal");
 
 function displayImagesInModal() {
-  const images = container.querySelectorAll("img"); //select all image elements inside the blog container
-  
-  images.forEach((img) => {
-    img.addEventListener("click", () => { //add event listener for clicks on images.
-      let modalImg = document.createElement("img"); //create new image element, not yet visible or part of the DOM.
+  const images = container.querySelectorAll("img");
 
-      //set attributes and source for the new image elements
+  images.forEach((img) => {
+    img.addEventListener("click", () => {
+      let modalImg = document.createElement("img");
+
       modalImg.classList.add("modal-content");
       modalImg.id = "img01";
       modalImg.src = img.src;
 
-      //checks if there is an image inside the modal, and removes it to ensure only the latest clicked image will be in the modal
+       //checks if there is an image inside the modal, and removes it to ensure only the latest clicked image will be in the modal
       let oldImg = modal.querySelector(".modal-content");
       if (oldImg) {
         modal.removeChild(oldImg);
@@ -53,7 +56,8 @@ function displayImagesInModal() {
   });
 }
 
-//remove modal when click occurs outside the image
+// Event listener for clicks outside the modal content.
+// Clicking outside the modal content will close the modal.
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
@@ -78,40 +82,86 @@ async function displayComments(postId) {
   });
 }
 
-//selects the comment form
+// Selecting form and input elements for form validation and submission
 const commentForm = document.getElementById("submit-comment-form");
+const author = document.querySelector("#comment-author");
+const authorError = document.querySelector("#comment-author-error");
+const email = document.querySelector("#comment-email");
+const emailError = document.querySelector("#email-error");
+const comment = document.querySelector("#comment-content");
+const commentError = document.querySelector("#comment-error");
+const formSuccess = document.querySelector("#form-success");
 
 
-commentForm.addEventListener("submit", async (event) => { //event listener for comment submission
-  event.preventDefault(); //prevents page from reloading when button is clicked
+// Helper functions for form validation.
+// length checks if the input has more than a certain number of characters.
+function length(value, len) {
+  if (value.trim().length > len) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-  //variables to get the user's input from the forms text fields
-  const author = document.getElementById("comment-author").value;
-  const email = document.getElementById("comment-email").value;
-  const content = document.getElementById("comment-content").value;
+// validateEmail uses regex to see if the input is a valid email format.
+function validateEmail(email) {
+  const regEx = /\S+@\S+\.\S+/;
+  const patternMatches = regEx.test(email);
+  return patternMatches;
+}
 
-  //structures the users input as an object that fits the API's requirements
-  const commentData = {
-    author_name: author,
-    author_email: email,
-    content: content,
-    post: id,
-  };
+// Event listener for the form submission.
+// On submission, the form fields are validated.
+// If the validation passes, the form data is submitted.
+commentForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
-  try {
-    await postComment(commentData); //tries to post the data to the API
-    alert("Comment submitted successfully!"); //if successful, alerts the user
-    
-    document.getElementById("comment-author").value = ""; //clears the forms text fields
-    document.getElementById("comment-email").value = "";
-    document.getElementById("comment-content").value = "";
-    await displayComments(id); //refreshes the displayed comments
+  formSuccess.style.display = "none";
+  let isValid = true;
 
-  } catch (error) { //If an error occurs, logs it and alerts user.
-    console.error("Error:", error);
-    alert("There was an error submitting your comment. Please try again.");
+  if (length(author.value, 5) === true) {
+    authorError.style.display = "none";
+  } else {
+    authorError.style.display = "block";
+    isValid = false;
+  }
+
+  if (validateEmail(email.value) === true) {
+    emailError.style.display = "none";
+  } else {
+    emailError.style.display = "block";
+    isValid = false;
+  }
+
+  if (length(comment.value, 15) === true) {
+    commentError.style.display = "none";
+  } else {
+    commentError.style.display = "block";
+    isValid = false;
+  }
+
+  if (isValid) {
+     //structures the users input as an object that fits the API's requirements
+    const commentData = {
+      author_name: author.value,
+      author_email: email.value,
+      content: comment.value,
+      post: id,
+    };
+
+    try {
+      await postComment(commentData); //tries to post the data to the API
+      author.value = ""; //clears the forms text fields
+      email.value = "";
+      comment.value = "";
+      await displayComments(id);
+      formSuccess.style.display = "block"; //if successful, alerts the user
+    } catch (error) { //If an error occurs, logs it and alerts user.
+      formSuccess.style.display = "none";
+      console.error("Error:", error);
+      alert("There was an error submitting your comment. Please try again.");
+    }
   }
 });
-
 //finally calls the displaySpecificPost function
 displaySpecificPost();

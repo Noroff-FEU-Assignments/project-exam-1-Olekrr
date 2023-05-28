@@ -29,7 +29,7 @@ function validateEmail(email) {
 // Form validation
 function validateForm(event) {
   event.preventDefault();
-
+  formSuccess.style.display = "none";
   let isValid = true;
 
   // Check the length of the name, it should be longer than 5 characters
