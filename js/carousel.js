@@ -9,11 +9,13 @@ const loader = document.querySelector(".loader");
 async function createSlides() {
   const results = await getPosts();
 
-  //creates new html div element for slides and gives it a class
+  let slideIndex = 1; //initialize slide index for aria labels
+
+  //creates new html div element for slides, gives it a class and attributes
   let slide = document.createElement("div");
   slide.classList.add("carousel-slide");
   slide.setAttribute("role", "group");
-  slide.setAttribute("aria-label", "Slide" + (i+1));
+  slide.setAttribute("aria-label", "Slide" + slideIndex);
 
   //loop through the fetched results
   for (let i = 0; i < results.length; i++) {
