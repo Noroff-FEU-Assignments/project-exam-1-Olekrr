@@ -45,16 +45,16 @@ section {
   width: 150px;
   border-radius: 50%;
 }
-/* This is the media query that applies to screen sizes of 1023px and below */
+
 @media screen and (max-width: 1023px) {
     .content-wrapper {
-      flex-direction: column; /* Changes the direction to column for smaller screens */
+      flex-direction: column; 
     }
     .about-section, 
     .team-section {
-      margin-right: 0; /* Removes the right margin for the about section */
-      width: 90%; /* Adjust this value as needed, it sets the width for the about section on smaller screens */
-      margin: 0 auto; /* Centers the about section */
+      margin-right: 0; 
+      width: 90%;
+      margin: 0 auto; 
       margin-bottom: 40px;
     }
     
