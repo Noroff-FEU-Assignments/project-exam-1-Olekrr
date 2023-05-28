@@ -1,9 +1,62 @@
-/*Contains styling for the about page*/
-main{
-    width: min(70ch, 100% - 7rem);
-    margin-inline: auto;
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
-
-p{
-    margin: 20px 0px;
+section {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px var(--boxshadow);
+  transition: box-shadow 0.3s ease;
+  margin-left: 30px;
+  margin-bottom: 60px;
 }
+.about-section {
+  width: 30%;
+  max-width: 70ch;
+  margin-right: 40px;
+}
+.about-section > p {
+  margin-top: 20px;
+}
+.about-section > h3 {
+  margin-top: 20px;
+}
+.about-social-media {
+  width: 60px;
+  display: flex;
+  margin-top: 20px;
+}
+.about-social-media > img {
+  margin-right: 20px;
+}
+.team-section {
+  max-width: 30ch;
+}
+.team-section > h2 {
+  text-align: center;
+}
+.team-element {
+  text-align: center;
+  margin-top: 20px;
+}
+.teammember {
+  width: 150px;
+  border-radius: 50%;
+}
+/* This is the media query that applies to screen sizes of 1023px and below */
+@media screen and (max-width: 1023px) {
+    .content-wrapper {
+      flex-direction: column; /* Changes the direction to column for smaller screens */
+    }
+    .about-section, 
+    .team-section {
+      margin-right: 0; /* Removes the right margin for the about section */
+      width: 90%; /* Adjust this value as needed, it sets the width for the about section on smaller screens */
+      margin: 0 auto; /* Centers the about section */
+      margin-bottom: 40px;
+    }
+    
+  }
+  
