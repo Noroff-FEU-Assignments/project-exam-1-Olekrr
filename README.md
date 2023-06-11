@@ -1,4 +1,4 @@
-# Game Hub
+# Meta Corner
 
 ![logo](assets/images/fulllogo.png)
 
